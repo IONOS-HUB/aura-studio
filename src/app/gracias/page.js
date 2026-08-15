@@ -33,7 +33,7 @@ export default function GraciasPage() {
           href="https://wa.me/593995368242"
           target="_blank"
           rel="noopener noreferrer"
-          className="eyebrow-label rounded-[2px] bg-ink-900 px-7 py-4 text-nude-000"
+          className="eyebrow-label rounded-[var(--radius-aura)] bg-ink-900 px-7 py-4 text-nude-000"
         >
           Escribir por WhatsApp
         </a>

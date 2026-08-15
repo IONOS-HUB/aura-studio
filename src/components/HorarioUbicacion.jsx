@@ -55,7 +55,7 @@ export default function HorarioUbicacion() {
           </a>
         </div>
 
-        <div className="relative min-h-[420px] overflow-hidden border border-nude-200 lg:col-span-7">
+        <div className="relative min-h-[420px] overflow-hidden rounded-[var(--radius-aura)] border border-nude-200 lg:col-span-7">
           {/* Real embed: <iframe src="https://www.google.com/maps/embed?..." /> once the exact address is confirmed. */}
           <div
             className="absolute inset-0"
@@ -78,7 +78,7 @@ export default function HorarioUbicacion() {
               </svg>
             </Seal>
           </div>
-          <span className="eyebrow-label absolute bottom-4 left-4 rounded-[2px] bg-ink-900/85 px-2.5 py-1.5 text-nude-000">
+          <span className="eyebrow-label absolute bottom-4 left-4 rounded-[var(--radius-aura)] bg-ink-900/85 px-2.5 py-1.5 text-nude-000">
             Mapa de muestra — insertar Google Maps embebido con la dirección
             confirmada
           </span>

@@ -15,6 +15,7 @@ export default function Reveal({
   y = 24,
   stagger = 0,
   mask = false,
+  ...rest
 }) {
   const ref = useRef(null);
 
@@ -61,7 +62,7 @@ export default function Reveal({
   }, []);
 
   return (
-    <Tag ref={ref} className={className}>
+    <Tag ref={ref} className={className} {...rest}>
       {children}
     </Tag>
   );

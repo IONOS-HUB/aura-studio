@@ -17,7 +17,7 @@ const CATEGORIES = [
 
 const TALL = new Set([1, 4, 7, 10]);
 
-const ITEMS = Array.from({ length: 18 }, (_, i) => ({
+const ITEMS = Array.from({ length: 12 }, (_, i) => ({
   id: i,
   category: CATEGORIES[(i % 6) + 1],
   variant: i % 3 === 0 ? "work" : i % 3 === 1 ? "portrait" : "studio",
@@ -54,10 +54,12 @@ export default function Galeria() {
           natural, sin comprimir por WhatsApp.]
         </p>
 
-        <div
+        <Reveal
+          as="div"
+          stagger={0.05}
           role="group"
           aria-label="Filtrar galería por servicio"
-          className="mb-10 flex flex-wrap gap-x-6 gap-y-3 border-b border-nude-200 pb-8"
+          className="glass-pill mb-10 flex flex-wrap gap-x-2 gap-y-2 rounded-[var(--radius-aura)] px-4 py-3"
         >
           {CATEGORIES.map((cat) => (
             <button
@@ -65,16 +67,16 @@ export default function Galeria() {
               type="button"
               onClick={() => setFilter(cat)}
               aria-pressed={filter === cat}
-              className={`eyebrow-label pb-1 transition-colors ${
+              className={`eyebrow-label rounded-full px-3.5 py-1.5 transition-colors ${
                 filter === cat
-                  ? "border-b border-gold-700 text-ink-900"
+                  ? "bg-ink-900 text-nude-000"
                   : "text-ink-600 hover:text-gold-700"
               }`}
             >
               {cat}
             </button>
           ))}
-        </div>
+        </Reveal>
 
         <ul className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
           {visible.map((item) => (

@@ -89,7 +89,7 @@ export default function Hero() {
         <div data-hero-reveal className="flex flex-wrap items-center gap-5">
           <a
             href="#reserva"
-            className="eyebrow-label rounded-[2px] bg-ink-900 px-7 py-4 text-nude-000 transition-colors hover:bg-ink-600"
+            className="eyebrow-label rounded-[var(--radius-aura)] bg-ink-900 px-7 py-4 text-nude-000 transition-colors hover:bg-ink-600"
           >
             Reservar cita
           </a>

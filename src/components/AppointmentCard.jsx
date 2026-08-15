@@ -9,7 +9,7 @@ import Seal from "./Seal";
  */
 export default function AppointmentCard({ service, date, time, price, confirmed }) {
   return (
-    <div className="relative overflow-hidden rounded-[2px] border border-ink-900 bg-nude-000">
+    <div className="glass-panel relative overflow-hidden rounded-[var(--radius-aura)] border-ink-900">
       <div className="flex items-center justify-between gap-4 bg-ink-900 px-6 py-4 text-nude-000">
         <div className="flex items-center gap-3">
           <Seal size={26} tone="gold-light">

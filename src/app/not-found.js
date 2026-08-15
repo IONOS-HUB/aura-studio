@@ -17,7 +17,7 @@ export default function NotFound() {
       <div className="flex flex-wrap items-center justify-center gap-6">
         <a
           href="/"
-          className="eyebrow-label rounded-[2px] bg-ink-900 px-7 py-4 text-nude-000"
+          className="eyebrow-label rounded-[var(--radius-aura)] bg-ink-900 px-7 py-4 text-nude-000"
         >
           Volver al inicio
         </a>

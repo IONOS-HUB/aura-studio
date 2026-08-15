@@ -20,11 +20,11 @@ export default function PlaceholderMedia({
     <div
       role="img"
       aria-label={`Espacio reservado para fotografía real: ${label}. Contenido de muestra, pendiente de reemplazo.`}
-      className={`relative overflow-hidden ${className}`}
+      className={`relative overflow-hidden rounded-[var(--radius-aura)] ${className}`}
       style={{ background: VARIANTS[variant] }}
     >
-      <div className="absolute inset-3 border border-gold-500/40" />
-      <span className="eyebrow-label absolute bottom-4 left-4 rounded-[2px] bg-ink-900/85 px-2.5 py-1.5 text-nude-000">
+      <div className="absolute inset-3 rounded-[calc(var(--radius-aura)*0.6)] border border-gold-500/40" />
+      <span className="eyebrow-label absolute bottom-4 left-4 rounded-[var(--radius-aura)] bg-ink-900/85 px-2.5 py-1.5 text-nude-000">
         Muestra — {label}
       </span>
     </div>

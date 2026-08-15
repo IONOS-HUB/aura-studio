@@ -30,7 +30,7 @@ export default function Nav({ markVisible }) {
       ref={navRef}
       className={`fixed inset-x-0 top-0 z-50 transition-[padding,background-color,border-color] duration-[400ms] ease-out ${
         compact
-          ? "border-b border-nude-200 bg-nude-000/90 py-3 backdrop-blur-sm"
+          ? "glass-nav border-b border-nude-200 py-3"
           : "border-b border-transparent bg-transparent py-6"
       }`}
     >
@@ -41,6 +41,9 @@ export default function Nav({ markVisible }) {
             markVisible ? "opacity-100" : "opacity-0"
           }`}
         >
+          {/* Swap for the real logo blocked on a transparent icon-only
+              cutout or vector — the three files in public/imgs/ are all
+              full lockups on a solid background, unreadable at this size. */}
           <Seal size={compact ? 30 : 36} tone="ink" data-seal-target>
             <span className="text-[0.85em] leading-none">A</span>
           </Seal>
@@ -65,7 +68,7 @@ export default function Nav({ markVisible }) {
           ))}
           <a
             href="#reserva"
-            className="eyebrow-label rounded-[2px] border border-ink-900 px-5 py-2.5 text-ink-900 transition-colors hover:border-gold-700 hover:text-gold-700"
+            className="eyebrow-label rounded-[var(--radius-aura)] border border-ink-900 px-5 py-2.5 text-ink-900 transition-colors hover:border-gold-700 hover:text-gold-700"
           >
             Reservar
           </a>
@@ -115,7 +118,7 @@ export default function Nav({ markVisible }) {
             <a
               href="#reserva"
               onClick={() => setOpen(false)}
-              className="mt-2 block rounded-[2px] border border-ink-900 px-5 py-3 text-center eyebrow-label text-ink-900"
+              className="mt-2 block rounded-[var(--radius-aura)] border border-ink-900 px-5 py-3 text-center eyebrow-label text-ink-900"
             >
               Reservar
             </a>

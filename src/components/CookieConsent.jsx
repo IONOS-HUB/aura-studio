@@ -34,7 +34,7 @@ export default function CookieConsent() {
       role="dialog"
       aria-live="polite"
       aria-label="Preferencias de cookies"
-      className="fixed inset-x-4 bottom-4 z-50 mx-auto max-w-xl rounded-[2px] border border-nude-200 bg-nude-000 p-5 shadow-[0_16px_40px_-16px_rgba(20,16,14,0.35)] sm:inset-x-auto sm:left-5"
+      className="fixed inset-x-4 bottom-4 z-50 mx-auto max-w-xl rounded-[var(--radius-aura)] border border-nude-200 bg-nude-000 p-5 shadow-[0_16px_40px_-16px_rgba(20,16,14,0.35)] sm:inset-x-auto sm:left-5"
     >
       <p className="measure text-sm text-ink-600">
         Usamos cookies para el funcionamiento del sitio y, con tu permiso, para
@@ -63,14 +63,14 @@ export default function CookieConsent() {
             <button
               type="button"
               onClick={() => applyConsent({ necessary: true, analytics: true })}
-              className="eyebrow-label rounded-[2px] bg-ink-900 px-4 py-2.5 text-nude-000"
+              className="eyebrow-label rounded-[var(--radius-aura)] bg-ink-900 px-4 py-2.5 text-nude-000"
             >
               Aceptar todo
             </button>
             <button
               type="button"
               onClick={() => applyConsent({ necessary: true, analytics: false })}
-              className="eyebrow-label rounded-[2px] border border-ink-900 px-4 py-2.5 text-ink-900"
+              className="eyebrow-label rounded-[var(--radius-aura)] border border-ink-900 px-4 py-2.5 text-ink-900"
             >
               Solo necesarias
             </button>
@@ -86,7 +86,7 @@ export default function CookieConsent() {
           <button
             type="button"
             onClick={() => applyConsent({ necessary: true, analytics })}
-            className="eyebrow-label rounded-[2px] bg-ink-900 px-4 py-2.5 text-nude-000"
+            className="eyebrow-label rounded-[var(--radius-aura)] bg-ink-900 px-4 py-2.5 text-nude-000"
           >
             Guardar preferencia
           </button>

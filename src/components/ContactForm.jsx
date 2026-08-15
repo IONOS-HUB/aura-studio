@@ -108,7 +108,7 @@ export default function ContactForm() {
         <select
           value={form.servicio}
           onChange={(e) => update("servicio", e.target.value)}
-          className="w-full rounded-[2px] border border-nude-200 bg-white px-4 py-3 text-ink-900 outline-none focus-visible:border-gold-700"
+          className="w-full rounded-[var(--radius-aura)] border border-nude-200 bg-white px-4 py-3 text-ink-900 outline-none focus-visible:border-gold-700"
         >
           <option value="">Selecciona un servicio</option>
           {SERVICES.map((s) => (
@@ -126,7 +126,7 @@ export default function ContactForm() {
         value={form.mensaje}
         onChange={(e) => update("mensaje", e.target.value)}
         rows={3}
-        className="w-full rounded-[2px] border border-nude-200 bg-white px-4 py-3 text-ink-900 outline-none placeholder:text-ink-600/60 focus-visible:border-gold-700"
+        className="w-full rounded-[var(--radius-aura)] border border-nude-200 bg-white px-4 py-3 text-ink-900 outline-none placeholder:text-ink-600/60 focus-visible:border-gold-700"
       />
 
       <label className="flex items-start gap-3 text-sm text-ink-600">
@@ -147,7 +147,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="eyebrow-label w-fit rounded-[2px] bg-ink-900 px-7 py-4 text-nude-000 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
+        className="eyebrow-label w-fit rounded-[var(--radius-aura)] bg-ink-900 px-7 py-4 text-nude-000 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
       >
         {status === "sending" ? "Enviando…" : "Enviar mensaje"}
       </button>
@@ -169,7 +169,7 @@ function TextField({ label, value, onChange, error, type = "text" }) {
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-[2px] border border-nude-200 bg-white px-4 py-3 text-ink-900 outline-none focus-visible:border-gold-700"
+        className="w-full rounded-[var(--radius-aura)] border border-nude-200 bg-white px-4 py-3 text-ink-900 outline-none focus-visible:border-gold-700"
       />
       {error && <ErrorText>{error}</ErrorText>}
     </div>

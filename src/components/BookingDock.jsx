@@ -8,7 +8,7 @@ export default function BookingDock() {
   return (
     <a
       href="#reserva"
-      className="fixed bottom-5 right-5 z-40 flex items-center gap-2.5 rounded-[2px] border border-gold-700/50 bg-ink-900 py-3 pl-4 pr-4 text-nude-000 shadow-[0_8px_24px_-8px_rgba(20,16,14,0.45)] lg:bottom-auto lg:right-0 lg:top-1/2 lg:flex-col lg:gap-3 lg:-translate-y-1/2 lg:rounded-none lg:rounded-l-[2px] lg:border-y lg:border-l lg:border-r-0 lg:py-6 lg:px-2.5 lg:shadow-none"
+      className="fixed bottom-5 right-5 z-40 flex items-center gap-2.5 rounded-[var(--radius-aura)] border border-gold-700/50 bg-ink-900 py-3 pl-4 pr-4 text-nude-000 shadow-[0_8px_24px_-8px_rgba(20,16,14,0.45)] lg:bottom-auto lg:right-0 lg:top-1/2 lg:flex-col lg:gap-3 lg:-translate-y-1/2 lg:rounded-none lg:rounded-l-[var(--radius-aura)] lg:border-y lg:border-l lg:border-r-0 lg:py-6 lg:px-2.5 lg:shadow-none"
     >
       <svg
         viewBox="0 0 24 24"

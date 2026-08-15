@@ -24,8 +24,11 @@
   --spacing-section-mobile: 6rem;
   --spacing-section-desktop: 10rem;
 
-  --radius-aura: 2px;
+  --radius-aura: 16px;
   --radius-seal: 9999px;
+
+  --color-glass-surface: color-mix(in srgb, var(--color-nude-000) 55%, transparent);
+  --color-glass-border: color-mix(in srgb, var(--color-nude-000) 60%, var(--color-gold-500) 40%);
 }
 
 @layer base {
@@ -98,6 +101,27 @@
 
   .measure {
     max-width: 62ch;
+  }
+
+  .glass-panel {
+    background: var(--color-glass-surface);
+    border: 1px solid var(--color-glass-border);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    backdrop-filter: blur(16px) saturate(140%);
+    box-shadow: 0 16px 40px -24px rgba(20, 16, 14, 0.35);
+  }
+
+  .glass-nav {
+    background: color-mix(in srgb, var(--color-nude-000) 72%, transparent);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    backdrop-filter: blur(20px) saturate(150%);
+  }
+
+  .glass-pill {
+    background: color-mix(in srgb, var(--color-nude-000) 65%, transparent);
+    border: 1px solid var(--color-glass-border);
+    -webkit-backdrop-filter: blur(12px) saturate(130%);
+    backdrop-filter: blur(12px) saturate(130%);
   }
 }
 

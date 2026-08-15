@@ -80,6 +80,40 @@ export default function Reserva() {
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
             {/* CAL.COM EMBED START — replace this block with the real embed */}
+            <Reveal
+              as="div"
+              className="glass-panel mb-10 flex items-start gap-4 rounded-[var(--radius-aura)] border-dashed p-5"
+              style={{ borderStyle: "dashed" }}
+            >
+              <Seal size={36} tone="gold">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="var(--color-gold-700)"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="5" width="18" height="16" rx="2" />
+                  <path d="M3 10h18M8 3v4M16 3v4" />
+                </svg>
+              </Seal>
+              <div className="flex flex-col gap-1">
+                <span className="eyebrow-label text-gold-700">
+                  Espacio reservado
+                </span>
+                <p className="text-sm text-ink-600">
+                  Aquí se insertará el calendario de reserva en vivo
+                  (Cal.com, sincronizado en tiempo real con la agenda de
+                  Google Calendar de Aura). Mientras tanto, este formulario
+                  de muestra reproduce el flujo real.
+                </p>
+              </div>
+            </Reveal>
+
             {submitted ? (
               <div className="flex flex-col gap-6">
                 <AppointmentCard
@@ -104,7 +138,7 @@ export default function Reserva() {
                         type="button"
                         onClick={() => setService(s.name)}
                         aria-pressed={service === s.name}
-                        className={`eyebrow-label rounded-[2px] border px-4 py-2.5 transition-colors ${
+                        className={`eyebrow-label rounded-[var(--radius-aura)] border px-4 py-2.5 transition-colors transition-transform hover:scale-[1.03] ${
                           service === s.name
                             ? "border-ink-900 bg-ink-900 text-nude-000"
                             : "border-nude-200 text-ink-600 hover:border-ink-900 hover:text-ink-900"
@@ -124,7 +158,7 @@ export default function Reserva() {
                         type="button"
                         onClick={() => setDateIdx(i)}
                         aria-pressed={dateIdx === i}
-                        className={`flex w-16 shrink-0 flex-col items-center gap-1 rounded-[2px] border py-3 transition-colors ${
+                        className={`flex w-16 shrink-0 flex-col items-center gap-1 rounded-[var(--radius-aura)] border py-3 transition-colors transition-transform hover:scale-[1.03] ${
                           dateIdx === i
                             ? "border-ink-900 bg-ink-900 text-nude-000"
                             : "border-nude-200 text-ink-600 hover:border-ink-900 hover:text-ink-900"
@@ -149,7 +183,7 @@ export default function Reserva() {
                         type="button"
                         onClick={() => setTime(t)}
                         aria-pressed={time === t}
-                        className={`eyebrow-label rounded-[2px] border py-2.5 font-tabular transition-colors ${
+                        className={`eyebrow-label rounded-[var(--radius-aura)] border py-2.5 font-tabular transition-colors transition-transform hover:scale-[1.03] ${
                           time === t
                             ? "border-ink-900 bg-ink-900 text-nude-000"
                             : "border-nude-200 text-ink-600 hover:border-ink-900 hover:text-ink-900"
@@ -166,7 +200,7 @@ export default function Reserva() {
                     type="date"
                     value={birthday}
                     onChange={(e) => setBirthday(e.target.value)}
-                    className="w-full max-w-xs rounded-[2px] border border-nude-200 bg-white px-4 py-3 text-ink-900 outline-none focus-visible:border-gold-700"
+                    className="w-full max-w-xs rounded-[var(--radius-aura)] border border-nude-200 bg-white px-4 py-3 text-ink-900 outline-none focus-visible:border-gold-700"
                   />
                   <p className="mt-2 text-xs text-ink-600">
                     Solo lo usamos para enviarte un beneficio de cumpleaños.
@@ -193,7 +227,7 @@ export default function Reserva() {
                     type="button"
                     disabled={!canSubmit}
                     onClick={() => setSubmitted(true)}
-                    className="eyebrow-label rounded-[2px] bg-ink-900 px-7 py-4 text-nude-000 transition-colors disabled:cursor-not-allowed disabled:opacity-35"
+                    className="eyebrow-label rounded-[var(--radius-aura)] bg-ink-900 px-7 py-4 text-nude-000 transition-colors disabled:cursor-not-allowed disabled:opacity-35"
                   >
                     Confirmar solicitud
                   </button>
@@ -233,7 +267,7 @@ export default function Reserva() {
 
 function Field({ label, children }) {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="glass-panel flex flex-col gap-4 rounded-[var(--radius-aura)] p-5">
       <p className="eyebrow-label text-ink-600">{label}</p>
       {children}
     </div>
