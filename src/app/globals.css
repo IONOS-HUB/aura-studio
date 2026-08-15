@@ -39,6 +39,7 @@
   html {
     background: var(--color-nude-000);
     color-scheme: light;
+    scroll-behavior: smooth;
   }
 
   body {

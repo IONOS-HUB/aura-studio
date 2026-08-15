@@ -38,6 +38,7 @@ export const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${enco
   `${SITE.streetAddress}, ${SITE.city}, ${SITE.region}, Ecuador`
 )}`;
 
-export const TITLE_DEFAULT = `${SITE.name} — Uñas, pestañas y maquillaje | ${SITE.city}`;
+export const TITLE_DEFAULT = `${SITE.name} — La belleza de sentirte tú | ${SITE.city}`;
 
-export const DESCRIPTION_DEFAULT = `${SITE.name}: uñas, pestañas, cejas, maquillaje, depilación y masajes en ${SITE.city}. Reserva tu cita en línea, a cualquier hora — ${SITE.slogan}.`;
+export const DESCRIPTION_DEFAULT = `${SITE.name} en ${SITE.city}: realzamos la belleza de cada mujer con uñas, pestañas, cejas, maquillaje, depilación y masajes. ${SITE.slogan}.`;
+

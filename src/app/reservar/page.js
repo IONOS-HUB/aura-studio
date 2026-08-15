@@ -3,9 +3,9 @@ import Footer from "@/components/Footer";
 import SiteHeader from "@/components/SiteHeader";
 
 export const metadata = {
-  title: "Reservar cita",
+  title: "Tu cita",
   description:
-    "Reserva tu cita en Aura Beauty Studio, Ibarra — uñas, pestañas, cejas, maquillaje, depilación y masajes.",
+    "Agenda tu momento en Aura Beauty Studio, Ibarra — realzamos la belleza de cada mujer.",
 };
 
 export default function ReservarPage() {

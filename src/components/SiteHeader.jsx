@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BrandMark from "./BrandMark";
+import GoldButton from "./GoldButton";
 
 export default function SiteHeader({ reserveHref = "/reservar" }) {
   return (
@@ -8,12 +9,9 @@ export default function SiteHeader({ reserveHref = "/reservar" }) {
         <Link href="/" className="flex w-fit items-center">
           <BrandMark size={48} priority />
         </Link>
-        <Link
-          href={reserveHref}
-          className="eyebrow-label rounded-[var(--radius-aura)] bg-ink-900 px-5 py-2.5 text-nude-000 transition-colors hover:bg-ink-600"
-        >
-          Reservar cita
-        </Link>
+        <GoldButton href={reserveHref} className="!px-5 !py-2.5">
+          Quiero mi cita
+        </GoldButton>
       </div>
     </header>
   );

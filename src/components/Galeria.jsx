@@ -1,9 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Reveal from "./Reveal";
 import PlaceholderMedia from "./PlaceholderMedia";
 import Seal from "./Seal";
+import { gsap } from "@/lib/gsap";
 
 const CATEGORIES = [
   "Todos",
@@ -25,11 +26,28 @@ const ITEMS = Array.from({ length: 12 }, (_, i) => ({
 
 export default function Galeria() {
   const [filter, setFilter] = useState("Todos");
+  const listRef = useRef(null);
 
   const visible = useMemo(
     () => ITEMS.filter((item) => filter === "Todos" || item.category === filter),
     [filter]
   );
+
+  useEffect(() => {
+    const items = listRef.current?.querySelectorAll("li");
+    if (!items?.length) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    gsap.fromTo(
+      items,
+      { clipPath: "inset(0 0 100% 0)" },
+      {
+        clipPath: "inset(0 0 0% 0)",
+        duration: 0.7,
+        stagger: 0.04,
+        ease: "power2.out",
+      }
+    );
+  }, [visible]);
 
   return (
     <section id="galeria" className="border-t border-nude-200">
@@ -46,7 +64,7 @@ export default function Galeria() {
           mask
           className="mb-4 max-w-2xl font-display text-h2 text-ink-900"
         >
-          El trabajo habla antes que nosotros.
+          El trabajo que realza tu belleza.
         </Reveal>
         <p className="mb-10 measure text-ink-600 lg:mb-14">
           Estamos preparando la galería de trabajos reales. Mientras tanto,
@@ -77,11 +95,11 @@ export default function Galeria() {
           ))}
         </Reveal>
 
-        <ul className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
+        <ul ref={listRef} className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
           {visible.map((item) => (
             <li
               key={item.id}
-              className={TALL.has(item.id % 12) ? "row-span-2" : ""}
+              className={`overflow-hidden ${TALL.has(item.id % 12) ? "row-span-2" : ""}`}
             >
               <PlaceholderMedia
                 label={item.category}

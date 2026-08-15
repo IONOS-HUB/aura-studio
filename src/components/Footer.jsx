@@ -19,7 +19,7 @@ export default function Footer() {
             <FooterLink href="/#servicios">Servicios</FooterLink>
             <FooterLink href="/#galeria">Galería</FooterLink>
             <FooterLink href="/#horario-ubicacion">Horario y ubicación</FooterLink>
-            <FooterLink href="/reservar">Reservar cita</FooterLink>
+            <FooterLink href="/reservar">Quiero mi cita</FooterLink>
           </div>
 
           <div className="flex flex-col gap-3">

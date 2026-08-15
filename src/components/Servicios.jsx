@@ -63,7 +63,7 @@ export default function Servicios() {
               mask
               className="max-w-2xl font-display text-h2 text-ink-900"
             >
-              Seis oficios, una misma precisión.
+              Seis formas de realzar tu belleza.
             </Reveal>
           </div>
           <p className="hidden max-w-xs measure text-sm text-ink-600 lg:block">

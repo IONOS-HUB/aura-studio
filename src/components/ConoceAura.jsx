@@ -25,22 +25,20 @@ export default function ConoceAura() {
         </div>
 
         <Reveal as="h2" mask className="font-display text-h2 text-ink-900">
-          Un estudio pensado como una pieza de joyería, no como un local más.
+          Un estudio para realzar tu belleza, no para pasar de largo.
         </Reveal>
 
         <div className="measure flex flex-col gap-5 text-lg text-ink-600">
           <p>
-            Aura Beauty Studio nace de una idea simple: cada cita debería
-            sentirse tan cuidada como el resultado que se lleva la clienta a
-            casa. Detrás del sello dorado hay un espacio donde la técnica y el
-            detalle se tratan con la misma precisión que una pieza de
-            orfebrería — nada se apresura, nada se improvisa.
+            Cada gesto en Aura está pensado para que te veas — y te sientas —
+            más tú. Uñas, pestañas, cejas y maquillaje tratados con la misma
+            precisión que una pieza de joyería: nada se apresura, nada se
+            improvisa.
           </p>
           <p>
-            María Chamorro fundó el estudio en Ibarra para ofrecer un lugar de
-            confianza cerca de casa, donde agendar una cita sea tan fácil como
-            debería serlo siempre: sin esperar una respuesta a medianoche, sin
-            perder la reserva entre mensajes.
+            María Chamorro fundó el estudio en Ibarra para que cada mujer
+            tenga un lugar cercano donde su belleza se cuida de verdad, con
+            tiempo y con detalle.
           </p>
         </div>
       </div>

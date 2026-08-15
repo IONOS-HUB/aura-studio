@@ -14,7 +14,7 @@ export default function Reserva({ eager = false }) {
           <Seal size={44}>
             <span className="font-tabular text-xs text-gold-700">06</span>
           </Seal>
-          <span className="eyebrow-label text-ink-600">Reserva tu cita</span>
+          <span className="eyebrow-label text-ink-600">Tu momento</span>
         </div>
 
         <Reveal
@@ -22,11 +22,11 @@ export default function Reserva({ eager = false }) {
           mask
           className="mb-4 max-w-2xl font-display text-h2 text-ink-900"
         >
-          Elige tu hora. La agenda es real.
+          Este momento es tuyo.
         </Reveal>
         <p className="mb-10 measure text-ink-600">
-          En Ibarra, a cualquier hora. Elige servicio y horario en el
-          calendario — la cita queda en la agenda del estudio al instante.
+          Elige el servicio y la hora. Te esperamos para realzar tu belleza —
+          la cita queda confirmada al instante.
         </p>
 
         <div className="grid gap-12 lg:grid-cols-12">

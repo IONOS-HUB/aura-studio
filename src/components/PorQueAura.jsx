@@ -4,8 +4,8 @@ import Seal from "./Seal";
 const REASONS = [
   {
     n: "01",
-    title: "Reserva sin esperar",
-    body: "Ves la disponibilidad del estudio y confirmas tu hora al instante — sin escribir y esperar una respuesta.",
+    title: "Belleza, a tu hora",
+    body: "Confirmas tu momento al instante y sales más tú — sin esperar una respuesta a medianoche.",
   },
   {
     n: "02",
@@ -43,7 +43,7 @@ export default function PorQueAura() {
             mask
             className="font-display text-h2 text-nude-000"
           >
-            Lo que nos distingue no es una promesa — es cómo trabajamos.
+            Lo que nos distingue es cómo realzamos tu belleza.
           </Reveal>
           <p className="measure text-sm text-[#C9BDB4]">
             Las reseñas de clientas aparecerán aquí cuando existan. No

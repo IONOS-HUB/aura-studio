@@ -21,7 +21,7 @@ export default function NotFound() {
           href="/reservar"
           className="eyebrow-label rounded-[var(--radius-aura)] bg-ink-900 px-7 py-4 text-nude-000"
         >
-          Reservar cita
+          Quiero mi cita
         </Link>
         <Link
           href="/"

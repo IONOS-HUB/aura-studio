@@ -3,6 +3,7 @@ import "./globals.css";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import CookieConsent from "@/components/CookieConsent";
 import StructuredData from "@/components/StructuredData";
+import SmoothHash from "@/components/SmoothHash";
 import {
   DESCRIPTION_DEFAULT,
   SITE,
@@ -41,7 +42,7 @@ export const metadata = {
   authors: [{ name: SITE.name }],
   openGraph: {
     title: `${SITE.name} — ${SITE.slogan}`,
-    description: `Reserva tu cita de belleza en Ibarra. Uñas, pestañas, cejas, maquillaje, depilación y masajes.`,
+    description: `Realzamos la belleza de cada mujer en Ibarra. Uñas, pestañas, cejas, maquillaje — ${SITE.slogan}.`,
     url: SITE.url,
     siteName: SITE.name,
     locale: "es_EC",
@@ -58,7 +59,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${SITE.name} — ${SITE.slogan}`,
-    description: `Uñas, pestañas y maquillaje en Ibarra. Reserva tu cita en línea.`,
+    description: `Realzamos la belleza de cada mujer en Ibarra. Uñas, pestañas y maquillaje — ${SITE.slogan}.`,
   },
 };
 
@@ -100,6 +101,7 @@ export default function RootLayout({ children }) {
         <WhatsAppFloat />
         <CookieConsent />
         <StructuredData />
+        <SmoothHash />
       </body>
     </html>
   );

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import BrandMark from "./BrandMark";
+import GoldButton from "./GoldButton";
 
 const LINKS = [
   { href: "#conoce-aura", label: "Conoce Aura" },
@@ -14,6 +15,7 @@ const LINKS = [
 
 export default function Nav({ markVisible }) {
   const navRef = useRef(null);
+  const menuListRef = useRef(null);
   const [compact, setCompact] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -24,6 +26,17 @@ export default function Nav({ markVisible }) {
     });
     return () => trigger.kill();
   }, []);
+
+  useEffect(() => {
+    const items = menuListRef.current?.querySelectorAll("li");
+    if (!open || !items?.length) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    gsap.fromTo(
+      items,
+      { y: 14, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.4, stagger: 0.05, ease: "power2.out" }
+    );
+  }, [open]);
 
   return (
     <header
@@ -58,12 +71,9 @@ export default function Nav({ markVisible }) {
               {link.label}
             </a>
           ))}
-          <a
-            href="#reserva"
-            className="eyebrow-label rounded-[var(--radius-aura)] bg-ink-900 px-5 py-2.5 text-nude-000 transition-colors hover:bg-ink-600"
-          >
-            Reservar cita
-          </a>
+          <GoldButton href="#reserva" className="!px-5 !py-2.5">
+            Quiero mi cita
+          </GoldButton>
         </nav>
 
         <button
@@ -90,11 +100,11 @@ export default function Nav({ markVisible }) {
       <nav
         id="mobile-nav"
         aria-label="Navegación móvil"
-        className={`overflow-hidden bg-nude-000 transition-[max-height] duration-300 ease-out lg:hidden ${
+        className={`overflow-hidden bg-nude-000 lg:hidden ${
           open ? "max-h-[500px] border-b border-nude-200" : "max-h-0"
         }`}
       >
-        <ul className="flex flex-col gap-1 px-6 pb-6 pt-2">
+        <ul ref={menuListRef} className="flex flex-col gap-1 px-6 pb-6 pt-2">
           {LINKS.map((link) => (
             <li key={link.href}>
               <a
@@ -107,13 +117,13 @@ export default function Nav({ markVisible }) {
             </li>
           ))}
           <li>
-            <a
+            <GoldButton
               href="#reserva"
+              className="mt-2 w-full justify-center !px-5 !py-3"
               onClick={() => setOpen(false)}
-              className="mt-2 block rounded-[var(--radius-aura)] bg-ink-900 px-5 py-3 text-center eyebrow-label text-nude-000"
             >
-              Reservar cita
-            </a>
+              Quiero mi cita
+            </GoldButton>
           </li>
         </ul>
       </nav>
