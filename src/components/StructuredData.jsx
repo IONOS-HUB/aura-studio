@@ -1,18 +1,21 @@
-// PRD §12.1 — Schema.org/BeautySalon. streetAddress/city and geo are
-// placeholders until PRD §16 Q11 (full address) is answered by the client.
+import { SITE } from "@/lib/site";
+
 export default function StructuredData() {
   const data = {
     "@context": "https://schema.org",
     "@type": "BeautySalon",
-    name: "Aura Beauty Studio",
-    slogan: "La belleza de sentirte tú",
-    telephone: "+593995368242",
-    email: "crdiris2428@gmail.com",
+    name: SITE.name,
+    slogan: SITE.slogan,
+    image: `${SITE.url}${SITE.logo}`,
+    url: SITE.url,
+    telephone: SITE.phone,
+    email: SITE.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Armando Hidrovo y Daniel Reyes (casa esquinera)",
-      addressLocality: "[Ciudad pendiente — PRD §16 Q11]",
-      addressCountry: "EC",
+      streetAddress: SITE.streetAddress,
+      addressLocality: SITE.city,
+      addressRegion: SITE.region,
+      addressCountry: SITE.countryCode,
     },
     openingHoursSpecification: [
       {
@@ -35,11 +38,12 @@ export default function StructuredData() {
         closes: "16:00",
       },
     ],
-    sameAs: [
-      "https://www.instagram.com/beautystudio_aura1",
-      "https://www.tiktok.com/@beautystudio_aura1",
-    ],
+    sameAs: [SITE.instagram, SITE.tiktok],
     priceRange: "$$",
+    areaServed: {
+      "@type": "City",
+      name: SITE.city,
+    },
   };
 
   return (

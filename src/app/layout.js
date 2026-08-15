@@ -3,6 +3,11 @@ import "./globals.css";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import CookieConsent from "@/components/CookieConsent";
 import StructuredData from "@/components/StructuredData";
+import {
+  DESCRIPTION_DEFAULT,
+  SITE,
+  TITLE_DEFAULT,
+} from "@/lib/site";
 
 const marcellus = Marcellus({
   subsets: ["latin"],
@@ -19,21 +24,41 @@ const jost = Jost({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://aurabeautystudio.com"),
+  metadataBase: new URL(SITE.url),
   title: {
-    default: "Aura Beauty Studio — Uñas, pestañas y maquillaje | [Ciudad]",
-    template: "%s | Aura Beauty Studio",
+    default: TITLE_DEFAULT,
+    template: `%s | ${SITE.name}`,
   },
-  description:
-    "Aura Beauty Studio: uñas, pestañas, cejas, maquillaje, depilación y masajes en [Ciudad]. Reserva tu cita en línea, a cualquier hora — La belleza de sentirte tú.",
+  description: DESCRIPTION_DEFAULT,
+  applicationName: SITE.name,
+  keywords: [
+    "salón de belleza Ibarra",
+    "uñas Ibarra",
+    "pestañas Ibarra",
+    "maquillaje Ibarra",
+    "Aura Beauty Studio",
+  ],
+  authors: [{ name: SITE.name }],
   openGraph: {
-    title: "Aura Beauty Studio — La belleza de sentirte tú",
-    description:
-      "Reserva tu cita de belleza en línea, sincronizada al instante. Uñas, pestañas, cejas, maquillaje, depilación y masajes.",
-    url: "https://aurabeautystudio.com",
-    siteName: "Aura Beauty Studio",
+    title: `${SITE.name} — ${SITE.slogan}`,
+    description: `Reserva tu cita de belleza en Ibarra. Uñas, pestañas, cejas, maquillaje, depilación y masajes.`,
+    url: SITE.url,
+    siteName: SITE.name,
     locale: "es_EC",
     type: "website",
+    images: [
+      {
+        url: SITE.logo,
+        width: 1200,
+        height: 1200,
+        alt: `${SITE.name} — ${SITE.descriptor}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE.name} — ${SITE.slogan}`,
+    description: `Uñas, pestañas y maquillaje en Ibarra. Reserva tu cita en línea.`,
   },
 };
 
@@ -59,10 +84,9 @@ export default function RootLayout({ children }) {
           slot without ever opening WhatsApp — while WhatsApp stays one tap away for
           whoever still wants to ask first.
           FIRST VIEWPORT: Full-bleed editorial hero — the sello unfolds top-left into the
-          fixed nav mark while a single full-height photograph (placeholder-labeled) sits
-          right of a left-aligned display headline; the booking CTA and WhatsApp affordance
-          are both visible without scrolling, docked bottom-right on mobile / right rail on
-          desktop, never gated behind the hero animation.
+          fixed nav mark while the gold-on-black lockup fills the right column; the booking
+          CTA and WhatsApp affordance are both visible without scrolling, docked bottom-right
+          on mobile / right rail on desktop, never gated behind the hero animation.
           FORM: Editorial Spread — magazine-style alternating full-bleed spreads and text
           columns, asymmetric grid, pull quotes (dealt lead, seed key ca7920e2, index 5).
           RAISE (from an airline-ticket-wallet challenger): the booking confirmation renders

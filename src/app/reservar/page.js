@@ -5,7 +5,7 @@ import Seal from "@/components/Seal";
 export const metadata = {
   title: "Reservar cita",
   description:
-    "Reserva tu cita en Aura Beauty Studio en segundos — disponibilidad real, sincronizada al instante.",
+    "Reserva tu cita en Aura Beauty Studio, Ibarra — uñas, pestañas, cejas, maquillaje, depilación y masajes.",
 };
 
 export default function ReservarPage() {

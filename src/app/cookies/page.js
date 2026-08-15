@@ -1,4 +1,5 @@
 import LegalPage from "@/components/LegalPage";
+import { SITE } from "@/lib/site";
 
 export const metadata = {
   title: "Política de cookies",
@@ -20,7 +21,7 @@ const COOKIES = [
 
 export default function CookiesPage() {
   return (
-    <LegalPage title="Política de cookies" updated="[fecha pendiente]">
+    <LegalPage title="Política de cookies" updated={SITE.legalUpdated}>
       <section>
         <p>
           Usamos cookies necesarias para el funcionamiento del sitio y,

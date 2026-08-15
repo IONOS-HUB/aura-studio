@@ -5,7 +5,7 @@ const REASONS = [
   {
     n: "01",
     title: "Reserva sin esperar",
-    body: "Ves la disponibilidad real del estudio y confirmas tu hora al instante — sin escribir y esperar una respuesta.",
+    body: "Ves la disponibilidad del estudio y confirmas tu hora al instante — sin escribir y esperar una respuesta.",
   },
   {
     n: "02",
@@ -14,8 +14,8 @@ const REASONS = [
   },
   {
     n: "03",
-    title: "Materiales de calidad, sin atajos",
-    body: "[Confirmar con la clienta qué marcas o certificaciones destacar aquí, si las hay.]",
+    title: "Cuidado, sin atajos",
+    body: "El tiempo y los materiales que pide el resultado — nada se apura para encajar una cita más.",
   },
   {
     n: "04",
@@ -45,11 +45,9 @@ export default function PorQueAura() {
           >
             Lo que nos distingue no es una promesa — es cómo trabajamos.
           </Reveal>
-          <p className="measure text-sm text-gold-300">
-            [+servicios realizados — cifra de muestra, se activa cuando exista
-            un conteo real. Aura no publica testimonios inventados: la sección
-            de reseñas se habilita en Fase 2 con reseñas verificables, PRD
-            §2.4 / §13.3.]
+          <p className="measure text-sm text-[#C9BDB4]">
+            Las reseñas de clientas aparecerán aquí cuando existan. No
+            publicamos testimonios que no sean reales.
           </p>
         </div>
 

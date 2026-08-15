@@ -10,7 +10,7 @@ export default function ConoceAura() {
     >
       <div className="relative order-2 lg:order-1 lg:col-span-5">
         <PlaceholderMedia
-          label="María trabajando en el estudio"
+          label="María en el estudio"
           variant="studio"
           className="aspect-[4/5] w-full lg:h-full"
         />
@@ -30,10 +30,6 @@ export default function ConoceAura() {
 
         <div className="measure flex flex-col gap-5 text-lg text-ink-600">
           <p>
-            <strong className="font-normal text-ink-900">
-              [Contenido de muestra — reemplazar con el texto real de "Conoce
-              Aura" que entregue la clienta, PRD §13.2, 120–180 palabras.]
-            </strong>{" "}
             Aura Beauty Studio nace de una idea simple: cada cita debería
             sentirse tan cuidada como el resultado que se lleva la clienta a
             casa. Detrás del sello dorado hay un espacio donde la técnica y el
@@ -41,10 +37,10 @@ export default function ConoceAura() {
             orfebrería — nada se apresura, nada se improvisa.
           </p>
           <p>
-            María Chamorro fundó el estudio para ofrecer un lugar de confianza
-            cerca de casa, donde agendar una cita sea tan fácil como debería
-            serlo siempre: sin esperar una respuesta a medianoche, sin perder
-            la reserva entre mensajes.
+            María Chamorro fundó el estudio en Ibarra para ofrecer un lugar de
+            confianza cerca de casa, donde agendar una cita sea tan fácil como
+            debería serlo siempre: sin esperar una respuesta a medianoche, sin
+            perder la reserva entre mensajes.
           </p>
         </div>
       </div>

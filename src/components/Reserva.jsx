@@ -72,48 +72,18 @@ export default function Reserva() {
         <Reveal
           as="h2"
           mask
-          className="mb-14 max-w-2xl font-display text-h2 text-ink-900"
+          className="mb-4 max-w-2xl font-display text-h2 text-ink-900"
         >
           Elige tu hora. La agenda es real.
         </Reveal>
+        <p className="mb-14 measure text-ink-600">
+          En Ibarra, a cualquier hora. Una reserva es una solicitud hasta que
+          te la confirmemos por correo o WhatsApp.
+        </p>
 
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
             {/* CAL.COM EMBED START — replace this block with the real embed */}
-            <Reveal
-              as="div"
-              className="glass-panel mb-10 flex items-start gap-4 rounded-[var(--radius-aura)] border-dashed p-5"
-              style={{ borderStyle: "dashed" }}
-            >
-              <Seal size={36} tone="gold">
-                <svg
-                  viewBox="0 0 24 24"
-                  width="14"
-                  height="14"
-                  fill="none"
-                  stroke="var(--color-gold-700)"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <rect x="3" y="5" width="18" height="16" rx="2" />
-                  <path d="M3 10h18M8 3v4M16 3v4" />
-                </svg>
-              </Seal>
-              <div className="flex flex-col gap-1">
-                <span className="eyebrow-label text-gold-700">
-                  Espacio reservado
-                </span>
-                <p className="text-sm text-ink-600">
-                  Aquí se insertará el calendario de reserva en vivo
-                  (Cal.com, sincronizado en tiempo real con la agenda de
-                  Google Calendar de Aura). Mientras tanto, este formulario
-                  de muestra reproduce el flujo real.
-                </p>
-              </div>
-            </Reveal>
-
             {submitted ? (
               <div className="flex flex-col gap-6">
                 <AppointmentCard
@@ -124,8 +94,8 @@ export default function Reserva() {
                   confirmed
                 />
                 <p className="measure text-sm text-ink-600">
-                  Solicitud recibida. Te escribiremos a tu correo para
-                  confirmar disponibilidad — revisa también tu WhatsApp.
+                  Solicitud recibida. Te escribimos a tu correo para
+                  confirmar disponibilidad — revisa también WhatsApp.
                 </p>
               </div>
             ) : (
@@ -255,8 +225,8 @@ export default function Reserva() {
               confirmed={submitted}
             />
             <p className="text-xs text-ink-600">
-              [Módulo de reserva de muestra — conectar el embed real de
-              Cal.com cuando exista la cuenta, PRD §8.2/§8.3.]
+              Precios referenciales. Una reserva en línea es una solicitud
+              hasta que Aura la confirme.
             </p>
           </div>
         </div>

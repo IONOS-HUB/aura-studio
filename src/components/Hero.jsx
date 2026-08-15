@@ -1,22 +1,20 @@
 "use client";
 
 import { useLayoutEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { gsap } from "@/lib/gsap";
 import SealIntro from "./SealIntro";
-import PlaceholderMedia from "./PlaceholderMedia";
 import Nav from "./Nav";
+import { SITE } from "@/lib/site";
 
 export default function Hero() {
   const [markVisible, setMarkVisible] = useState(false);
   const heroRef = useRef(null);
   const imgRef = useRef(null);
 
-  // PRD §9.4: text must stay visible if JS fails, so it ships visible by
-  // default (no CSS opacity-0). This layout effect hides it imperatively,
-  // synchronously before paint, and only when the seal intro is actually
-  // about to play — matching SealIntro's own skip conditions independently,
-  // since both read the same pre-existing sessionStorage/media-query state
-  // before either has run.
+  // Text must stay visible if JS fails, so it ships visible by default.
+  // This layout effect hides it imperatively, synchronously before paint,
+  // and only when the seal intro is actually about to play.
   useLayoutEffect(() => {
     const alreadySeen =
       typeof window !== "undefined" && sessionStorage.getItem("aura-seal-seen");
@@ -72,19 +70,23 @@ export default function Hero() {
 
       <div className="relative z-10 order-2 flex flex-col justify-center gap-8 px-6 pb-14 pt-8 lg:order-1 lg:px-16 lg:pb-16 lg:pt-32">
         <p data-hero-reveal className="eyebrow-label text-gold-700">
-          Nails · Lashes · Makeup
+          {SITE.descriptor}
         </p>
         <h1
           data-hero-reveal
           className="max-w-xl font-display leading-[0.98] text-ink-900"
           style={{ fontSize: "var(--text-display-xl)" }}
         >
-          La belleza de sentirte tú
+          {SITE.slogan}
+          <span className="sr-only">
+            {" "}
+            — Uñas, pestañas y maquillaje en {SITE.city}
+          </span>
         </h1>
         <p data-hero-reveal className="measure text-lg text-ink-600">
-          Uñas, pestañas, cejas, maquillaje, depilación y masajes — reservados
-          en línea, sincronizados al instante con la agenda real del estudio.
-          Sin esperar respuesta por WhatsApp.
+          Uñas, pestañas, cejas, maquillaje, depilación y masajes en{" "}
+          {SITE.city} — reserva tu cita en línea, a cualquier hora, sin
+          esperar respuesta por WhatsApp.
         </p>
         <div data-hero-reveal className="flex flex-wrap items-center gap-5">
           <a
@@ -101,16 +103,19 @@ export default function Hero() {
           </a>
         </div>
         <p data-hero-reveal className="eyebrow-label text-ink-600/70">
-          Lun–Sáb 08:00–19:00 · Dom 08:00–16:00
+          {SITE.hoursWeek} · {SITE.hoursSunday} · {SITE.city}
         </p>
       </div>
 
-      <div className="relative order-1 h-[46vh] overflow-hidden lg:order-2 lg:h-full">
+      <div className="relative order-1 h-[46vh] overflow-hidden bg-black lg:order-2 lg:h-full">
         <div ref={imgRef} className="absolute inset-0">
-          <PlaceholderMedia
-            label="retrato editorial de un servicio en proceso"
-            variant="portrait"
-            className="h-full w-full"
+          <Image
+            src="/imgs/icon.PNG"
+            alt={`${SITE.name}, ${SITE.descriptor}`}
+            fill
+            priority
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-contain p-[10%] lg:p-[14%]"
           />
         </div>
       </div>

@@ -48,10 +48,9 @@ export default function Galeria() {
         >
           El trabajo habla antes que nosotros.
         </Reveal>
-        <p className="mb-10 measure text-sm text-gold-700 lg:mb-14">
-          [Galería de muestra — reemplazar cada imagen con fotografía real del
-          estudio, PRD §13.2: mínimo 12–18 trabajos, 2 por servicio, luz
-          natural, sin comprimir por WhatsApp.]
+        <p className="mb-10 measure text-ink-600 lg:mb-14">
+          Estamos preparando la galería de trabajos reales. Mientras tanto,
+          el sello ocupa el lugar de cada foto.
         </p>
 
         <Reveal
@@ -85,7 +84,7 @@ export default function Galeria() {
               className={TALL.has(item.id % 12) ? "row-span-2" : ""}
             >
               <PlaceholderMedia
-                label={`${item.category} #${item.id + 1}`}
+                label={item.category}
                 variant={item.variant}
                 className={`h-full w-full ${
                   TALL.has(item.id % 12) ? "aspect-[3/5]" : "aspect-square"

@@ -1,5 +1,6 @@
 import Reveal from "./Reveal";
 import Seal from "./Seal";
+import { FULL_ADDRESS, MAPS_EMBED, MAPS_LINK, SITE } from "@/lib/site";
 
 const HOURS = [
   { day: "Lunes – Sábado", time: "08:00 – 19:00" },
@@ -32,56 +33,46 @@ export default function HorarioUbicacion() {
               </div>
             ))}
           </dl>
-          <p className="eyebrow-label text-gold-700">
-            [Confirmar pausa de almuerzo, feriados, y si la última cita
-            inicia o termina a las 19:00 — PRD §8.4]
+          <p className="text-sm text-ink-600">
+            La última cita se agenda según la duración del servicio, dentro
+            de este horario.
           </p>
 
           <address className="not-italic text-lg text-ink-600">
-            Armando Hidrovo y Daniel Reyes (casa esquinera)
+            {SITE.streetAddress}
             <br />
-            <span className="text-gold-700">
-              [Falta ciudad y sector — PRD §16 pregunta 11]
-            </span>
+            {SITE.city}, {SITE.region}
           </address>
 
-          <a
-            href="https://wa.me/593995368242"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="eyebrow-label w-fit border-b border-gold-700 pb-0.5 text-ink-900 transition-colors hover:text-gold-700"
-          >
-            Coordinar por WhatsApp
-          </a>
+          <div className="flex flex-wrap items-center gap-5">
+            <a
+              href={MAPS_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="eyebrow-label w-fit border-b border-gold-700 pb-0.5 text-ink-900 transition-colors hover:text-gold-700"
+            >
+              Cómo llegar
+            </a>
+            <a
+              href={`https://wa.me/${SITE.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="eyebrow-label w-fit border-b border-gold-700 pb-0.5 text-ink-900 transition-colors hover:text-gold-700"
+            >
+              Coordinar por WhatsApp
+            </a>
+          </div>
         </div>
 
         <div className="relative min-h-[420px] overflow-hidden rounded-[var(--radius-aura)] border border-nude-200 lg:col-span-7">
-          {/* Real embed: <iframe src="https://www.google.com/maps/embed?..." /> once the exact address is confirmed. */}
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(138,106,40,0.12) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(138,106,40,0.12) 40px)",
-              backgroundColor: "var(--color-nude-100)",
-            }}
+          <iframe
+            title={`Mapa de ${SITE.name} en ${FULL_ADDRESS}`}
+            src={MAPS_EMBED}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="absolute inset-0 h-full w-full border-0"
+            allowFullScreen
           />
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <Seal size={56}>
-              <svg
-                viewBox="0 0 24 24"
-                width="14"
-                height="14"
-                fill="var(--color-gold-700)"
-                aria-hidden="true"
-              >
-                <circle cx="12" cy="12" r="6" />
-              </svg>
-            </Seal>
-          </div>
-          <span className="eyebrow-label absolute bottom-4 left-4 rounded-[var(--radius-aura)] bg-ink-900/85 px-2.5 py-1.5 text-nude-000">
-            Mapa de muestra — insertar Google Maps embebido con la dirección
-            confirmada
-          </span>
         </div>
       </div>
     </section>

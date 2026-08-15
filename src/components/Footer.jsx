@@ -1,5 +1,6 @@
 import Seal from "./Seal";
 import CookiePreferenceButton from "./CookiePreferenceButton";
+import { SITE } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -10,31 +11,26 @@ export default function Footer() {
             <Seal size={40} tone="ink">
               <span className="text-sm">A</span>
             </Seal>
-            <p className="font-display text-lg text-ink-900">
-              Aura Beauty Studio
-            </p>
-            <p className="text-sm text-ink-600">La belleza de sentirte tú</p>
+            <p className="font-display text-lg text-ink-900">{SITE.name}</p>
+            <p className="text-sm text-ink-600">{SITE.slogan}</p>
           </div>
 
           <div className="flex flex-col gap-3">
             <p className="eyebrow-label text-ink-600">Estudio</p>
-            <FooterLink href="#conoce-aura">Conoce Aura</FooterLink>
-            <FooterLink href="#servicios">Servicios</FooterLink>
-            <FooterLink href="#galeria">Galería</FooterLink>
-            <FooterLink href="#horario-ubicacion">Horario y ubicación</FooterLink>
+            <FooterLink href="/#conoce-aura">Conoce Aura</FooterLink>
+            <FooterLink href="/#servicios">Servicios</FooterLink>
+            <FooterLink href="/#galeria">Galería</FooterLink>
+            <FooterLink href="/#horario-ubicacion">Horario y ubicación</FooterLink>
+            <FooterLink href="/reservar">Reservar cita</FooterLink>
           </div>
 
           <div className="flex flex-col gap-3">
             <p className="eyebrow-label text-ink-600">Contacto</p>
-            <FooterLink href="https://wa.me/593995368242">
-              +593 99 536 8242
+            <FooterLink href={`https://wa.me/${SITE.whatsapp}`}>
+              {SITE.phoneDisplay}
             </FooterLink>
-            <FooterLink href="mailto:crdiris2428@gmail.com">
-              crdiris2428@gmail.com
-            </FooterLink>
-            <FooterLink href="https://instagram.com/beautystudio_aura1">
-              @beautystudio_aura1
-            </FooterLink>
+            <FooterLink href={`mailto:${SITE.email}`}>{SITE.email}</FooterLink>
+            <FooterLink href={SITE.instagram}>{SITE.instagramHandle}</FooterLink>
           </div>
 
           <div className="flex flex-col gap-3">
@@ -47,8 +43,13 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col-reverse items-start justify-between gap-4 border-t border-nude-200 pt-8 text-xs text-ink-600 sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} Aura Beauty Studio. Todos los derechos reservados.</p>
-          <p>[Ciudad pendiente] · Ecuador</p>
+          <p>
+            © {new Date().getFullYear()} {SITE.name}. Todos los derechos
+            reservados.
+          </p>
+          <p>
+            {SITE.city}, {SITE.region} · {SITE.country}
+          </p>
         </div>
       </div>
     </footer>

@@ -25,9 +25,9 @@ An always-on booking path for a single-operator beauty studio: visitors can see 
 ## Operating Context
 
 - Services offered: uñas (nails), pestañas (lashes), cejas (brows), maquillaje (makeup), depilación (waxing), masajes corporales (body massage) — six categories total.
-- Hours: Mon–Sat 08:00–19:00, Sun 08:00–16:00, timezone `America/Guayaquil` (UTC−5). Open: whether there's a lunch break, national holidays, and whether the last slot *starts* or *ends* at closing time.
+- Hours: Mon–Sat 08:00–19:00, Sun 08:00–16:00, timezone `America/Guayaquil` (UTC−5). Last appointment is booked according to service duration within those hours. Lunch break and national holidays are not published.
 - Current acquisition channels: Instagram (@beautystudio_aura1), TikTok (@beautystudio_aura1), WhatsApp (+593 99 536 8242) as fallback/manual channel.
-- Location: "Armando Hidrovo y Daniel Reyes (casa esquinera)" — city/sector still missing, needed for the map and local SEO.
+- Location: Armando Hidrovo y Daniel Reyes (casa esquinera), Ibarra, Imbabura, Ecuador. Sector not specified.
 - Team: currently appears to be María alone; open whether other specialists exist and whether they'd need separate calendars.
 - Legal jurisdiction: Ecuador — LOPDP (Ley Orgánica de Protección de Datos Personales) applies because the site collects name, phone, email, and (optional) birthdate.
 
@@ -40,29 +40,30 @@ An always-on booking path for a single-operator beauty studio: visitors can see 
 - No customer reviews exist yet; the product must not fabricate them. Legitimate paths: launch without a testimonials section (reserve the space for Phase 2), and/or offer discounted services to early clients in exchange for real reviews.
 - Cookie/analytics consent required before GA4 loads (Google Consent Mode v2) — LOPDP-driven, not optional.
 - WhatsApp must remain a visible fallback path throughout (floating button, "prefer to coordinate by WhatsApp?" near booking) for visitors who don't want to book directly.
-- Six services still need real durations and prices from the client before the booking module can be configured — currently blocking.
+- Published service prices and durations are **referential samples** until the client delivers the real table; they are labeled as such on the site and confirmed before the appointment. They are not the final catalog.
+- Cancellation policy (assumed for launch, pending client override): free cancel/reschedule up to 12 hours before the appointment; a delay of more than 15 minutes may require rescheduling.
 - Domain is undecided (brief left it blank); a `.com`/`.ec` for "aurabeautystudio" was suggested but availability is unverified.
 
 ## Brand Commitments
 
 - Name: Aura Beauty Studio. Slogan: "La belleza de sentirte tú." Descriptor from the logo: "Nails · Lashes · Makeup."
-- Logo delivered as PNG only; a background-removed version and, ideally, a vector (SVG/AI) file are still needed — without a vector, planned signature animation work can't run at full quality.
+- Logo delivered as PNG (`public/imgs/icon.PNG`, gold on black). A background-removed version and, ideally, a vector (SVG/AI) file are still needed — without a vector, planned signature animation work can't run at full quality.
 - Contact email on record: crdiris2428@gmail.com (personal Gmail; a branded address like hola@aurabeautystudio.com was proposed but not decided).
 - WhatsApp: +593 99 536 8242.
 
 ## Evidence on Hand
 
-- Logo (PNG, with background) delivered. Slogan, palette direction, contact details, address (partial), hours, and social handles delivered.
-- No finished-work photos, studio photos, or photos of María working exist yet — all required before the gallery (a core trust signal for this audience) can be built. This is the top content risk for the project.
+- Logo (PNG, gold on black) delivered and used for Open Graph, apple-touch icon, and photo placeholders. Slogan, palette direction, contact details, hours, social handles, and city (Ibarra, Imbabura) delivered.
+- No finished-work photos, studio photos, or photos of María working exist yet. Gallery and hero use the lockup as a branded stand-in — not stock photography.
 - No customer testimonials exist. Do not fabricate any — see Capabilities & Constraints.
-- No per-service pricing/duration data yet.
-- No "Conoce Aura" or "Por qué elegir Aura" body copy yet.
-- No cancellation policy text yet (needed for legal pages and to reduce no-shows).
+- Per-service prices/durations on the site are referential samples until the real table arrives.
+- "Conoce Aura" / "Por qué elegir Aura" body copy is studio-written pending client originals.
+- Cancellation policy published as the 12-hour / 15-minute assumption above.
 
 ## Product Principles
 
 1. The booking CTA is always reachable — never gated behind scroll depth or animation delay.
-2. Never fabricate what doesn't exist yet: no invented testimonials, no placeholder pricing, no stock-photo gallery standing in for real work.
+2. Never fabricate what doesn't exist yet: no invented testimonials, no stock-photo gallery standing in for real work. Published prices may be referential samples only until the real table is delivered — never presented as a confirmed catalog.
 3. Design for the actual usage moment: a phone, often at night, often on limited data — not a desktop-first showcase.
 4. Legal and consent requirements (LOPDP, cookie consent, optional birthdate) are load-bearing product constraints, not launch-day add-ons.
 5. WhatsApp stays available everywhere as an escape hatch from the booking flow, never removed in favor of the new system.

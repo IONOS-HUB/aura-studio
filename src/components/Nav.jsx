@@ -68,9 +68,9 @@ export default function Nav({ markVisible }) {
           ))}
           <a
             href="#reserva"
-            className="eyebrow-label rounded-[var(--radius-aura)] border border-ink-900 px-5 py-2.5 text-ink-900 transition-colors hover:border-gold-700 hover:text-gold-700"
+            className="eyebrow-label rounded-[var(--radius-aura)] bg-ink-900 px-5 py-2.5 text-nude-000 transition-colors hover:bg-ink-600"
           >
-            Reservar
+            Reservar cita
           </a>
         </nav>
 
@@ -118,9 +118,9 @@ export default function Nav({ markVisible }) {
             <a
               href="#reserva"
               onClick={() => setOpen(false)}
-              className="mt-2 block rounded-[var(--radius-aura)] border border-ink-900 px-5 py-3 text-center eyebrow-label text-ink-900"
+              className="mt-2 block rounded-[var(--radius-aura)] bg-ink-900 px-5 py-3 text-center eyebrow-label text-nude-000"
             >
-              Reservar
+              Reservar cita
             </a>
           </li>
         </ul>

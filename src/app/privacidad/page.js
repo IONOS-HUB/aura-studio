@@ -1,4 +1,5 @@
 import LegalPage from "@/components/LegalPage";
+import { FULL_ADDRESS, SITE } from "@/lib/site";
 
 export const metadata = {
   title: "Política de privacidad",
@@ -7,12 +8,12 @@ export const metadata = {
 
 export default function PrivacidadPage() {
   return (
-    <LegalPage title="Política de privacidad" updated="[fecha pendiente]">
+    <LegalPage title="Política de privacidad" updated={SITE.legalUpdated}>
       <section>
         <h2>1. Responsable del tratamiento</h2>
         <p>
-          Aura Beauty Studio. Contacto: crdiris2428@gmail.com.{" "}
-          [Confirmar dirección legal completa.]
+          Aura Beauty Studio, {FULL_ADDRESS}. Contacto: {SITE.email} ·{" "}
+          {SITE.phoneDisplay}.
         </p>
       </section>
       <section>
@@ -35,9 +36,9 @@ export default function PrivacidadPage() {
       <section>
         <h2>4. Con quién se comparte</h2>
         <p>
-          Con nuestro proveedor de agendamiento (Cal.com), proveedor de
-          correo transaccional y herramienta de analítica (Google Analytics),
-          que pueden implicar transferencia internacional de datos.
+          Con nuestro proveedor de agendamiento, el proveedor de correo
+          transaccional y la herramienta de analítica (Google Analytics), que
+          pueden implicar transferencia internacional de datos.
         </p>
       </section>
       <section>
@@ -48,8 +49,8 @@ export default function PrivacidadPage() {
         <h2>6. Tus derechos</h2>
         <p>
           Acceso, rectificación, eliminación, oposición, portabilidad y a no
-          ser objeto de decisiones automatizadas. Escríbenos a
-          crdiris2428@gmail.com para ejercerlos.
+          ser objeto de decisiones automatizadas. Escríbenos a {SITE.email}{" "}
+          para ejercerlos. Responderemos en el plazo que fija la ley.
         </p>
       </section>
     </LegalPage>

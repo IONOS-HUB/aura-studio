@@ -1,4 +1,5 @@
 import LegalPage from "@/components/LegalPage";
+import { SITE } from "@/lib/site";
 
 export const metadata = {
   title: "Términos y condiciones",
@@ -7,13 +8,14 @@ export const metadata = {
 
 export default function TerminosPage() {
   return (
-    <LegalPage title="Términos y condiciones" updated="[fecha pendiente]">
+    <LegalPage title="Términos y condiciones" updated={SITE.legalUpdated}>
       <section>
         <h2>1. Servicios ofrecidos</h2>
         <p>
           Aura Beauty Studio ofrece servicios de uñas, pestañas, cejas,
-          maquillaje, depilación y masajes corporales, descritos en la
-          sección Servicios de este sitio.
+          maquillaje, depilación y masajes corporales en {SITE.city},{" "}
+          {SITE.region}. Los servicios se describen en este sitio con precios
+          referenciales.
         </p>
       </section>
       <section>
@@ -26,15 +28,16 @@ export default function TerminosPage() {
       <section>
         <h2>3. Cancelación y reprogramación</h2>
         <p>
-          [Pendiente — PRD §16 pregunta 12: sugerido, cancelación libre hasta
-          12 horas antes de la cita.]
+          Puedes cancelar o reprogramar sin cargo hasta {SITE.cancellationHours}{" "}
+          horas antes de la cita. Si cancelas con menos tiempo, el estudio
+          puede no reponer ese horario a otra clienta.
         </p>
       </section>
       <section>
         <h2>4. Retrasos</h2>
         <p>
-          [Pendiente confirmar. Sugerido: un retraso mayor a 15 minutos puede
-          implicar reprogramación de la cita.]
+          Un retraso mayor a {SITE.lateMinutes} minutos puede implicar
+          reprogramar la cita, para no afectar a quien viene después.
         </p>
       </section>
       <section>

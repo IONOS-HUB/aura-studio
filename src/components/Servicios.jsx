@@ -67,12 +67,8 @@ export default function Servicios() {
             </Reveal>
           </div>
           <p className="hidden max-w-xs measure text-sm text-ink-600 lg:block">
-            Precios desde, referenciales — el precio final depende del
-            servicio elegido y se confirma antes de la cita.{" "}
-            <em className="not-italic text-gold-700">
-              [Cifras de muestra — reemplazar con la tabla real de precios y
-              duraciones, PRD §16 pregunta 3.]
-            </em>
+            Precios referenciales. El precio final depende del servicio
+            elegido y se confirma antes de la cita.
           </p>
         </div>
 
@@ -117,10 +113,7 @@ export default function Servicios() {
         </Reveal>
 
         <p className="mt-8 measure text-sm text-ink-600 lg:hidden">
-          Precios referenciales.{" "}
-          <em className="not-italic text-gold-700">
-            [Cifras de muestra — pendiente de confirmar.]
-          </em>
+          Precios referenciales. Se confirman antes de la cita.
         </p>
       </div>
     </section>

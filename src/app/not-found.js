@@ -16,8 +16,14 @@ export default function NotFound() {
       </div>
       <div className="flex flex-wrap items-center justify-center gap-6">
         <a
-          href="/"
+          href="/reservar"
           className="eyebrow-label rounded-[var(--radius-aura)] bg-ink-900 px-7 py-4 text-nude-000"
+        >
+          Reservar cita
+        </a>
+        <a
+          href="/"
+          className="eyebrow-label border-b border-gold-700 pb-0.5 text-ink-900"
         >
           Volver al inicio
         </a>
