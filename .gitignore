@@ -29,3 +29,4 @@ yarn-error.log*
 
 # design review artifacts (local screenshots, not product code)
 .impeccable/review/
+.impeccable/hook.cache.json

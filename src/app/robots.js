@@ -1,12 +1,13 @@
-const BASE_URL = "https://aurabeautystudio.com";
+import { getSiteUrl } from "@/lib/site";
 
 export default function robots() {
+  const base = getSiteUrl();
   return {
     rules: {
       userAgent: "*",
       allow: "/",
       disallow: "/api/",
     },
-    sitemap: `${BASE_URL}/sitemap.xml`,
+    sitemap: `${base}/sitemap.xml`,
   };
 }

@@ -6,6 +6,7 @@ import StructuredData from "@/components/StructuredData";
 import SmoothHash from "@/components/SmoothHash";
 import {
   DESCRIPTION_DEFAULT,
+  getSiteUrl,
   SITE,
   TITLE_DEFAULT,
 } from "@/lib/site";
@@ -25,7 +26,7 @@ const jost = Jost({
 });
 
 export const metadata = {
-  metadataBase: new URL(SITE.url),
+  metadataBase: new URL(getSiteUrl()),
   title: {
     default: TITLE_DEFAULT,
     template: `%s | ${SITE.name}`,

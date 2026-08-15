@@ -1,16 +1,33 @@
-# React + Vite
+# Aura Beauty Studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sitio Next.js 15 (App Router) listo para Vercel. Aún no se ha publicado.
 
-Currently, two official plugins are available:
+## Local
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+Abre [http://localhost:3000](http://localhost:3000).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm run build && npm start
+```
 
-## Expanding the ESLint configuration
+## Vercel (cuando toque publicar)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Sube el repo a GitHub / GitLab / Bitbucket.
+2. En [vercel.com](https://vercel.com) → Add New Project → importa el repo.
+3. Framework: **Next.js** (se detecta solo). Node **20**.
+4. Variables (opcional, ver `.env.example`):
+   - `NEXT_PUBLIC_SITE_URL` — URL canónica, p. ej. `https://aurabeautystudio.com` o la `.vercel.app` temporal.
+5. Deploy. Dominio custom después, en Project → Settings → Domains.
+
+No hace falta `vercel.json` especial: el framework se infiere del `package.json`.
+
+## Qué no está cableado aún
+
+- Envío real del formulario de contacto (`RESEND_API_KEY`).
+- Google Analytics (`NEXT_PUBLIC_GA_ID`).
+- Dominio propio (hoy el canónico en código es `https://aurabeautystudio.com`).

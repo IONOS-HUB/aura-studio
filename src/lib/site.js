@@ -42,3 +42,16 @@ export const TITLE_DEFAULT = `${SITE.name} — La belleza de sentirte tú | ${SI
 
 export const DESCRIPTION_DEFAULT = `${SITE.name} en ${SITE.city}: realzamos la belleza de cada mujer con uñas, pestañas, cejas, maquillaje, depilación y masajes. ${SITE.slogan}.`;
 
+/** Origin of this deployment (preview or production). Canonical brand URL stays in SITE.url. */
+export function getSiteUrl() {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+  if (explicit) return explicit;
+  if (process.env.VERCEL_ENV === "production" && process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  return SITE.url;
+}
+
