@@ -1,0 +1,53 @@
+import Reveal from "./Reveal";
+import PlaceholderMedia from "./PlaceholderMedia";
+import Seal from "./Seal";
+
+export default function ConoceAura() {
+  return (
+    <section
+      id="conoce-aura"
+      className="grid gap-0 border-t border-nude-200 lg:grid-cols-12"
+    >
+      <div className="relative order-2 lg:order-1 lg:col-span-5">
+        <PlaceholderMedia
+          label="María trabajando en el estudio"
+          variant="studio"
+          className="aspect-[4/5] w-full lg:h-full"
+        />
+      </div>
+
+      <div className="order-1 flex flex-col justify-center gap-8 px-6 py-20 sm:py-24 lg:order-2 lg:col-span-6 lg:col-start-7 lg:py-0">
+        <div className="flex items-center gap-4">
+          <Seal size={44}>
+            <span className="font-tabular text-xs text-gold-700">01</span>
+          </Seal>
+          <span className="eyebrow-label text-ink-600">Conoce Aura</span>
+        </div>
+
+        <Reveal as="h2" mask className="font-display text-h2 text-ink-900">
+          Un estudio pensado como una pieza de joyería, no como un local más.
+        </Reveal>
+
+        <div className="measure flex flex-col gap-5 text-lg text-ink-600">
+          <p>
+            <strong className="font-normal text-ink-900">
+              [Contenido de muestra — reemplazar con el texto real de "Conoce
+              Aura" que entregue la clienta, PRD §13.2, 120–180 palabras.]
+            </strong>{" "}
+            Aura Beauty Studio nace de una idea simple: cada cita debería
+            sentirse tan cuidada como el resultado que se lleva la clienta a
+            casa. Detrás del sello dorado hay un espacio donde la técnica y el
+            detalle se tratan con la misma precisión que una pieza de
+            orfebrería — nada se apresura, nada se improvisa.
+          </p>
+          <p>
+            María Chamorro fundó el estudio para ofrecer un lugar de confianza
+            cerca de casa, donde agendar una cita sea tan fácil como debería
+            serlo siempre: sin esperar una respuesta a medianoche, sin perder
+            la reserva entre mensajes.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}

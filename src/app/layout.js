@@ -2,6 +2,7 @@ import { Marcellus, Jost } from "next/font/google";
 import "./globals.css";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import CookieConsent from "@/components/CookieConsent";
+import StructuredData from "@/components/StructuredData";
 
 const marcellus = Marcellus({
   subsets: ["latin"],
@@ -74,6 +75,7 @@ export default function RootLayout({ children }) {
         {children}
         <WhatsAppFloat />
         <CookieConsent />
+        <StructuredData />
       </body>
     </html>
   );

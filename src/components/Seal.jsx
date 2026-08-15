@@ -9,12 +9,19 @@ export default function Seal({
   tone = "gold",
   children,
   className = "",
+  ...rest
 }) {
-  const stroke = tone === "ink" ? "var(--color-ink-900)" : "var(--color-gold-700)";
+  const strokeByTone = {
+    ink: "var(--color-ink-900)",
+    gold: "var(--color-gold-700)",
+    "gold-light": "var(--color-gold-300)",
+  };
+  const stroke = strokeByTone[tone] ?? strokeByTone.gold;
   return (
     <span
       className={`relative inline-flex shrink-0 items-center justify-center rounded-full ${className}`}
       style={{ width: size, height: size }}
+      {...rest}
     >
       <svg
         viewBox="0 0 100 100"
