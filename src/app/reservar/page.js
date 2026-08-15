@@ -1,6 +1,6 @@
 import Reserva from "@/components/Reserva";
 import Footer from "@/components/Footer";
-import Seal from "@/components/Seal";
+import SiteHeader from "@/components/SiteHeader";
 
 export const metadata = {
   title: "Reservar cita",
@@ -10,16 +10,9 @@ export const metadata = {
 
 export default function ReservarPage() {
   return (
-    <main>
-      <header className="border-b border-nude-200 px-6 py-6 lg:px-16">
-        <a href="/" className="flex w-fit items-center gap-3">
-          <Seal size={36} tone="ink">
-            <span className="text-sm">A</span>
-          </Seal>
-          <span className="eyebrow-label">Aura Beauty Studio</span>
-        </a>
-      </header>
-      <Reserva />
+    <main className="flex min-h-screen flex-col bg-nude-000">
+      <SiteHeader reserveHref="#reserva" />
+      <Reserva eager />
       <Footer />
     </main>
   );

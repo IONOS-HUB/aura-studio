@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Next.js 15 (App Router). Confirmed over the existing Vite + React SPA scaffold because the product depends on local-search discovery (O6) and a client-rendered SPA indexes poorly; Next.js keeps React while adding static/SSR rendering for SEO. The current `src/` Vite scaffold is not yet migrated — this is a recorded decision to act on, not a completed state. Tailwind CSS v4 and GSAP + ScrollTrigger are confirmed dependencies (per client request and PRD §11.1); Cal.com is the confirmed booking integration for Phase 1 (see Capabilities & Constraints).
+Next.js 15 (App Router). Confirmed over the existing Vite + React SPA scaffold because the product depends on local-search discovery (O6) and a client-rendered SPA indexes poorly; Next.js keeps React while adding static/SSR rendering for SEO. The current `src/` Vite scaffold is not yet migrated — this is a recorded decision to act on, not a completed state. Tailwind CSS v4 and GSAP + ScrollTrigger are confirmed dependencies (per client request and PRD §11.1); Google Calendar Appointment Schedules is the confirmed booking integration for Phase 1 (see Capabilities & Constraints).
 
 ## Users
 
@@ -34,7 +34,7 @@ An always-on booking path for a single-operator beauty studio: visitors can see 
 ## Capabilities & Constraints
 
 - Booking must sync two-way with Google Calendar, block already-occupied slots, support per-service durations, apply a configurable buffer between appointments (suggested 15 min), and confirm/remind by email.
-- Phase 1 booking implementation: Cal.com embedded with custom styling — chosen over a native Google Calendar booking page (too limited on branding) and a fully custom backend+API system (8–12 days, high maintenance burden a one-person business shouldn't carry in v1). Revisit a custom system only if volume later justifies it.
+- Phase 1 booking implementation: Google Calendar Appointment Schedules, embedded on `/` (#reserva) and `/reservar` via the public schedule URL the client provided. Chosen because it writes directly into María's Google Calendar (the source of truth), needs no extra vendor account, and is already live. A custom backend remains out of Phase 1.
 - Birthdate field in any form is optional, explicitly labeled with its purpose, never required — LOPDP consent needs a declared purpose, and a required birthdate field hurts conversion.
 - No online payments/deposits, no multi-language, no separate team-profile pages, no visitor comment wall, and no invented testimonials in Phase 1 — explicitly excluded, not oversights.
 - No customer reviews exist yet; the product must not fabricate them. Legitimate paths: launch without a testimonials section (reserve the space for Phase 2), and/or offer discounted services to early clients in exchange for real reviews.

@@ -1,4 +1,6 @@
+import Link from "next/link";
 import Seal from "@/components/Seal";
+import { SITE } from "@/lib/site";
 
 export default function NotFound() {
   return (
@@ -15,20 +17,20 @@ export default function NotFound() {
         </p>
       </div>
       <div className="flex flex-wrap items-center justify-center gap-6">
-        <a
+        <Link
           href="/reservar"
           className="eyebrow-label rounded-[var(--radius-aura)] bg-ink-900 px-7 py-4 text-nude-000"
         >
           Reservar cita
-        </a>
-        <a
+        </Link>
+        <Link
           href="/"
           className="eyebrow-label border-b border-gold-700 pb-0.5 text-ink-900"
         >
           Volver al inicio
-        </a>
+        </Link>
         <a
-          href="https://wa.me/593995368242"
+          href={`https://wa.me/${SITE.whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
           className="eyebrow-label border-b border-gold-700 pb-0.5 text-ink-900"

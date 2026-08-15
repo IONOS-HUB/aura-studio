@@ -3,7 +3,6 @@ import { FULL_ADDRESS, SITE } from "@/lib/site";
 
 export const metadata = {
   title: "Política de privacidad",
-  robots: { index: false },
 };
 
 export default function PrivacidadPage() {
@@ -25,20 +24,24 @@ export default function PrivacidadPage() {
             beneficio de cumpleaños, si la proporcionas.
           </li>
           <li>
+            Datos que ingresas en el calendario de citas de Google (nombre,
+            correo, hora) — para confirmar y recordarte la reserva.
+          </li>
+          <li>
             Mensaje del formulario de contacto — para responder tu consulta.
           </li>
         </ul>
       </section>
       <section>
         <h2>3. Base legal</h2>
-        <p>Tu consentimiento expreso, otorgado al marcar la casilla correspondiente.</p>
+        <p>Tu consentimiento al reservar una cita o al enviar el formulario de contacto.</p>
       </section>
       <section>
         <h2>4. Con quién se comparte</h2>
         <p>
-          Con nuestro proveedor de agendamiento, el proveedor de correo
-          transaccional y la herramienta de analítica (Google Analytics), que
-          pueden implicar transferencia internacional de datos.
+          Con Google Calendar (para agendar y confirmar tu cita), el
+          proveedor de correo transaccional y, si das permiso, Google
+          Analytics. Eso puede implicar transferencia internacional de datos.
         </p>
       </section>
       <section>

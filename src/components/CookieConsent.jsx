@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const STORAGE_KEY = "aura-cookie-consent";
 
@@ -40,9 +41,9 @@ export default function CookieConsent() {
         Usamos cookies para el funcionamiento del sitio y, con tu permiso, para
         analítica. Puedes cambiar tu preferencia cuando quieras desde el pie de
         página.{" "}
-        <a href="/cookies" className="text-gold-700 underline underline-offset-2">
+        <Link href="/cookies" className="text-gold-700 underline underline-offset-2">
           Política de cookies
-        </a>
+        </Link>
       </p>
 
       {customizing && (

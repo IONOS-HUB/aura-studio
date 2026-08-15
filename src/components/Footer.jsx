@@ -1,4 +1,5 @@
-import Seal from "./Seal";
+import Link from "next/link";
+import BrandMark from "./BrandMark";
 import CookiePreferenceButton from "./CookiePreferenceButton";
 import { SITE } from "@/lib/site";
 
@@ -8,10 +9,7 @@ export default function Footer() {
       <div className="mx-auto max-w-[1400px] px-6 py-16 lg:px-16">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col gap-4">
-            <Seal size={40} tone="ink">
-              <span className="text-sm">A</span>
-            </Seal>
-            <p className="font-display text-lg text-ink-900">{SITE.name}</p>
+            <BrandMark size={88} />
             <p className="text-sm text-ink-600">{SITE.slogan}</p>
           </div>
 
@@ -57,12 +55,27 @@ export default function Footer() {
 }
 
 function FooterLink({ href, children }) {
+  const className =
+    "w-fit text-sm text-ink-600 transition-colors hover:text-gold-700";
+  const external = href.startsWith("http") || href.startsWith("mailto:");
+
+  if (external) {
+    return (
+      <a
+        href={href}
+        className={className}
+        {...(href.startsWith("http")
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
+      >
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <a
-      href={href}
-      className="w-fit text-sm text-ink-600 transition-colors hover:text-gold-700"
-    >
+    <Link href={href} className={className}>
       {children}
-    </a>
+    </Link>
   );
 }

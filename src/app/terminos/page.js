@@ -3,7 +3,6 @@ import { SITE } from "@/lib/site";
 
 export const metadata = {
   title: "Términos y condiciones",
-  robots: { index: false },
 };
 
 export default function TerminosPage() {
@@ -21,8 +20,10 @@ export default function TerminosPage() {
       <section>
         <h2>2. Reservas</h2>
         <p>
-          Una reserva realizada en línea es una <strong>solicitud</strong>{" "}
-          hasta que Aura la confirme por correo o WhatsApp.
+          Las citas se agendan en el calendario en línea del estudio (Citas
+          de Google Calendar). Al confirmar un horario, la cita queda en la
+          agenda de Aura y recibes un correo de confirmación de Google. Puedes
+          cancelar o reprogramar desde ese correo, o escribiéndonos.
         </p>
       </section>
       <section>

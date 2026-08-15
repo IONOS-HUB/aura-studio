@@ -3,7 +3,6 @@ import { SITE } from "@/lib/site";
 
 export const metadata = {
   title: "Política de cookies",
-  robots: { index: false },
 };
 
 const COOKIES = [
@@ -17,6 +16,11 @@ const COOKIES = [
     purpose: "Analítica (Google Analytics) — solo si aceptas",
     duration: "hasta 24 meses",
   },
+  {
+    name: "Cookies de Google Calendar",
+    purpose: "Funcionamiento del calendario de citas embebido",
+    duration: "las define Google",
+  },
 ];
 
 export default function CookiesPage() {
@@ -25,8 +29,9 @@ export default function CookiesPage() {
       <section>
         <p>
           Usamos cookies necesarias para el funcionamiento del sitio y,
-          solo con tu permiso, cookies de analítica. Puedes cambiar tu
-          preferencia en cualquier momento desde el pie de página.
+          solo con tu permiso, cookies de analítica. El calendario de citas
+          (Google) puede establecer las suyas al cargar. Puedes cambiar tu
+          preferencia de analítica cuando quieras desde el pie de página.
         </p>
       </section>
       <section>

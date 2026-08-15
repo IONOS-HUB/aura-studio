@@ -22,6 +22,10 @@ export const SITE = {
   cancellationHours: 12,
   lateMinutes: 15,
   legalUpdated: "15 de agosto de 2026",
+  appointmentsUrl:
+    "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1vatENEh_I3ZTpIvgmy8r1Gu8ihP9lVVXcTn9thz6eZTQwqz_3koEOsKlTCNNihjy3wxg1PCb5",
+  appointmentsEmbed:
+    "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1vatENEh_I3ZTpIvgmy8r1Gu8ihP9lVVXcTn9thz6eZTQwqz_3koEOsKlTCNNihjy3wxg1PCb5?gv=true&hl=es",
 };
 
 export const FULL_ADDRESS = `${SITE.streetAddress}, ${SITE.city}, ${SITE.region}, ${SITE.country}`;

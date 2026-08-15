@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
-import Seal from "./Seal";
+import BrandMark from "./BrandMark";
 
 const LINKS = [
   { href: "#conoce-aura", label: "Conoce Aura" },
@@ -37,23 +37,15 @@ export default function Nav({ markVisible }) {
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 lg:px-12">
         <a
           href="#inicio"
-          className={`flex items-center gap-3 font-display text-ink-900 transition-opacity duration-300 ${
+          className={`flex items-center transition-opacity duration-300 ${
             markVisible ? "opacity-100" : "opacity-0"
           }`}
         >
-          {/* Swap for the real logo blocked on a transparent icon-only
-              cutout or vector — the three files in public/imgs/ are all
-              full lockups on a solid background, unreadable at this size. */}
-          <Seal size={compact ? 30 : 36} tone="ink" data-seal-target>
-            <span className="text-[0.85em] leading-none">A</span>
-          </Seal>
-          <span
-            className={`hidden eyebrow-label sm:inline transition-[font-size] duration-300 ${
-              compact ? "text-[10px]" : "text-xs"
-            }`}
-          >
-            Aura Beauty Studio
-          </span>
+          <BrandMark
+            size={compact ? 40 : 48}
+            priority
+            data-seal-target
+          />
         </a>
 
         <nav aria-label="Navegación principal" className="hidden items-center gap-8 lg:flex">
