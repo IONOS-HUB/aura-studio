@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import Nav from "@/components/Nav";
 import ConoceAura from "@/components/ConoceAura";
 import Servicios from "@/components/Servicios";
 import Galeria from "@/components/Galeria";
@@ -11,6 +12,7 @@ import BookingDock from "@/components/BookingDock";
 export default function Home() {
   return (
     <main>
+      <Nav />
       <Hero />
       <ConoceAura />
       <Servicios />

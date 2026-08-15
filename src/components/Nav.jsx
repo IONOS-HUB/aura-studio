@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { gsap, ScrollTrigger } from "@/lib/gsap";
+import { gsap } from "@/lib/gsap";
 import BrandMark from "./BrandMark";
 import GoldButton from "./GoldButton";
 
@@ -13,18 +13,16 @@ const LINKS = [
   { href: "#horario-ubicacion", label: "Horario" },
 ];
 
-export default function Nav({ markVisible }) {
-  const navRef = useRef(null);
+export default function Nav() {
   const menuListRef = useRef(null);
   const [compact, setCompact] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const trigger = ScrollTrigger.create({
-      start: 96,
-      onUpdate: (self) => setCompact(self.scroll() > 8),
-    });
-    return () => trigger.kill();
+    const onScroll = () => setCompact(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
@@ -40,25 +38,15 @@ export default function Nav({ markVisible }) {
 
   return (
     <header
-      ref={navRef}
-      className={`fixed inset-x-0 top-0 z-50 transition-[padding,background-color,border-color] duration-[400ms] ease-out ${
-        compact
-          ? "glass-nav border-b border-nude-200 py-3"
-          : "border-b border-transparent bg-transparent py-6"
+      className={`fixed inset-x-0 top-0 z-50 transition-[padding,background-color,border-color,box-shadow] duration-300 ease-out ${
+        compact || open
+          ? "glass-nav border-b border-nude-200 py-3 shadow-[0_8px_24px_-16px_rgba(20,16,14,0.35)]"
+          : "border-b border-transparent bg-transparent py-5"
       }`}
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 lg:px-12">
-        <a
-          href="#inicio"
-          className={`flex items-center transition-opacity duration-300 ${
-            markVisible ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <BrandMark
-            size={compact ? 40 : 48}
-            priority
-            data-seal-target
-          />
+        <a href="#inicio" className="flex items-center">
+          <BrandMark size={compact ? 40 : 48} priority data-seal-target />
         </a>
 
         <nav aria-label="Navegación principal" className="hidden items-center gap-8 lg:flex">

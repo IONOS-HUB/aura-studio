@@ -1,20 +1,19 @@
 "use client";
 
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "@/lib/gsap";
 import SealIntro from "./SealIntro";
-import Nav from "./Nav";
 import GoldButton from "./GoldButton";
 import { SITE } from "@/lib/site";
 
 const HEADLINE = SITE.slogan.split(" ");
 
 export default function Hero() {
-  const [markVisible, setMarkVisible] = useState(false);
   const heroRef = useRef(null);
   const imgRef = useRef(null);
   const lineRef = useRef(null);
+  const pendingReveal = useRef(false);
 
   useLayoutEffect(() => {
     const alreadySeen =
@@ -22,18 +21,17 @@ export default function Hero() {
     const reduce =
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (alreadySeen || reduce) {
-      setMarkVisible(true);
-      return;
-    }
+    if (alreadySeen || reduce) return;
 
+    pendingReveal.current = true;
     const els = heroRef.current?.querySelectorAll("[data-hero-reveal]");
     if (els?.length) gsap.set(els, { opacity: 0, y: 20 });
     if (lineRef.current) gsap.set(lineRef.current, { scaleX: 0 });
   }, []);
 
   function handleSealDone() {
-    setMarkVisible(true);
+    if (!pendingReveal.current) return;
+    pendingReveal.current = false;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const els = heroRef.current?.querySelectorAll("[data-hero-reveal]");
 
@@ -96,12 +94,11 @@ export default function Hero() {
     <section
       id="inicio"
       ref={heroRef}
-      className="relative grid min-h-screen grid-rows-[auto_1fr] overflow-hidden bg-nude-000 lg:grid-cols-2 lg:grid-rows-1"
+      className="relative grid min-h-screen bg-nude-000 lg:grid-cols-2"
     >
       <SealIntro onDone={handleSealDone} />
-      <Nav markVisible={markVisible} />
 
-      <div className="relative z-10 order-2 flex flex-col justify-center gap-8 px-6 pb-14 pt-8 lg:order-1 lg:px-16 lg:pb-16 lg:pt-32">
+      <div className="relative z-10 order-2 flex flex-col justify-center gap-8 px-6 pb-14 pt-28 lg:order-1 lg:px-16 lg:pb-16 lg:pt-32">
         <p data-hero-reveal className="eyebrow-label text-gold-700">
           Belleza para ella · {SITE.city}
         </p>

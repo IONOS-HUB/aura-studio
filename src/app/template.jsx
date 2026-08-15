@@ -13,8 +13,8 @@ export default function Template({ children }) {
     if (reduce) return;
     gsap.fromTo(
       el,
-      { opacity: 0, y: 12 },
-      { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+      { opacity: 0 },
+      { opacity: 1, duration: 0.4, ease: "power2.out", clearProps: "transform" }
     );
   }, []);
 
