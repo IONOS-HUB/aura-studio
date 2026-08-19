@@ -44,6 +44,23 @@ const SERVICES = [
     duration: "50–80 min",
     desc: "Masaje relajante, descontracturante y drenaje linfático manual.",
   },
+  {
+    n: "07",
+    name: "Ritual de Barro Volcánico Aura",
+    from: "$45",
+    duration: "60–90 min",
+    desc: "Servicio premium con barro volcánico: exfolia la piel, favorece la relajación, realiza una limpieza profunda, mejora la sensación y apariencia de la piel, aporta minerales a la superficie, brinda sensación de bienestar muscular y una experiencia diferente.",
+    premium: true,
+    benefits: [
+      "Ayuda a exfoliar la piel",
+      "Favorece la relajación",
+      "Limpieza de la piel",
+      "Mejora la sensación y apariencia de la piel",
+      "Aporta minerales a la superficie de la piel",
+      "Sensación de bienestar muscular",
+      "Experiencia diferente",
+    ],
+  },
 ];
 
 export default function Servicios() {
@@ -63,7 +80,7 @@ export default function Servicios() {
               mask
               className="max-w-2xl font-display text-h2 text-ink-900"
             >
-              Seis formas de realzar tu belleza.
+              Siete formas de realzar tu belleza.
             </Reveal>
           </div>
           <p className="hidden max-w-xs measure text-sm text-ink-600 lg:block">
@@ -88,6 +105,11 @@ export default function Servicios() {
                     <span className="font-display text-2xl text-ink-900">
                       {s.name}
                     </span>
+                    {s.premium && (
+                      <span className="eyebrow-label rounded-full border border-gold-700 px-2 py-0.5 text-[10px] text-gold-700">
+                        Premium
+                      </span>
+                    )}
                   </span>
                   <span className="flex items-center gap-4">
                     <span className="eyebrow-label text-ink-600">
@@ -103,6 +125,19 @@ export default function Servicios() {
                 </summary>
                 <div className="measure pb-8 pl-0 text-ink-600 lg:px-8 lg:pl-16">
                   <p>{s.desc}</p>
+                  {s.benefits && (
+                    <ul className="mt-4 flex flex-col gap-2">
+                      {s.benefits.map((b) => (
+                        <li key={b} className="flex items-start gap-3 text-sm">
+                          <span
+                            aria-hidden="true"
+                            className="mt-2 h-1 w-1 shrink-0 rounded-full bg-gold-700"
+                          />
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                   <p className="eyebrow-label mt-3 text-ink-600/70">
                     Duración aproximada: {s.duration}
                   </p>

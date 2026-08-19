@@ -36,9 +36,9 @@ export default function ConoceAura() {
             improvisa.
           </p>
           <p>
-            María Chamorro fundó el estudio en Ibarra para que cada mujer
-            tenga un lugar cercano donde su belleza se cuida de verdad, con
-            tiempo y con detalle.
+            La fundadora del estudio en Ibarra soñó este espacio para que
+            cada mujer tenga un lugar cercano donde su belleza se cuida de
+            verdad, con tiempo y con detalle.
           </p>
         </div>
       </div>
