@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import Reveal from "./Reveal";
 import PlaceholderMedia from "./PlaceholderMedia";
 import Seal from "./Seal";
 import { gsap } from "@/lib/gsap";
+import { GALLERY_ITEMS } from "@/lib/galeria-items";
 
 const CATEGORIES = [
   "Todos",
@@ -16,20 +18,12 @@ const CATEGORIES = [
   "Masajes",
 ];
 
-const TALL = new Set([1, 4, 7, 10]);
-
-const ITEMS = Array.from({ length: 12 }, (_, i) => ({
-  id: i,
-  category: CATEGORIES[(i % 6) + 1],
-  variant: i % 3 === 0 ? "work" : i % 3 === 1 ? "portrait" : "studio",
-}));
-
 export default function Galeria() {
   const [filter, setFilter] = useState("Todos");
   const listRef = useRef(null);
 
   const visible = useMemo(
-    () => ITEMS.filter((item) => filter === "Todos" || item.category === filter),
+    () => GALLERY_ITEMS.filter((item) => filter === "Todos" || item.category === filter),
     [filter]
   );
 
@@ -99,15 +93,31 @@ export default function Galeria() {
           {visible.map((item) => (
             <li
               key={item.id}
-              className={`overflow-hidden ${TALL.has(item.id % 12) ? "row-span-2" : ""}`}
+              className={`overflow-hidden ${item.tall ? "row-span-2" : ""}`}
             >
-              <PlaceholderMedia
-                label={item.category}
-                variant={item.variant}
-                className={`h-full w-full ${
-                  TALL.has(item.id % 12) ? "aspect-[3/5]" : "aspect-square"
-                }`}
-              />
+              {item.placeholder ? (
+                <PlaceholderMedia
+                  label={item.category}
+                  variant={item.variant}
+                  className={`h-full w-full ${
+                    item.tall ? "aspect-[3/5]" : "aspect-square"
+                  }`}
+                />
+              ) : (
+                <div
+                  className={`relative h-full w-full overflow-hidden rounded-[var(--radius-aura)] ${
+                    item.tall ? "aspect-[3/5]" : "aspect-square"
+                  }`}
+                >
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+              )}
             </li>
           ))}
         </ul>
