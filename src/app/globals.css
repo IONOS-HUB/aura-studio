@@ -126,6 +126,18 @@
   }
 }
 
+@keyframes crown-pulse {
+  0%,
+  100% {
+    transform: rotate(-16deg) scale(1);
+    box-shadow: 0 4px 10px -3px rgba(20, 16, 14, 0.55);
+  }
+  50% {
+    transform: rotate(-16deg) scale(1.1);
+    box-shadow: 0 6px 16px -3px rgba(201, 162, 74, 0.7);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
