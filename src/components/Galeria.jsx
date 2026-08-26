@@ -109,13 +109,31 @@ export default function Galeria() {
                     item.tall ? "aspect-[3/5]" : "aspect-square"
                   }`}
                 >
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    sizes="(min-width: 1024px) 25vw, 50vw"
-                    className="object-cover"
-                  />
+                  {item.type === "video" ? (
+                    <video
+                      // muted por propiedad: React no siempre refleja el atributo
+                      // y sin él los navegadores bloquean el autoplay.
+                      ref={(el) => {
+                        if (el) el.muted = true;
+                      }}
+                      src={item.src}
+                      aria-label={item.ariaLabel}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                  ) : (
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      fill
+                      sizes="(min-width: 1024px) 25vw, 50vw"
+                      className="object-cover"
+                    />
+                  )}
                 </div>
               )}
             </li>
