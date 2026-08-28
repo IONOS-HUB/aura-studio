@@ -1,7 +1,6 @@
 import { Marcellus, Jost } from "next/font/google";
 import "./globals.css";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
-import CookieConsent from "@/components/CookieConsent";
 import StructuredData from "@/components/StructuredData";
 import SmoothHash from "@/components/SmoothHash";
 import {
@@ -100,7 +99,6 @@ export default function RootLayout({ children }) {
         */}
         {children}
         <WhatsAppFloat />
-        <CookieConsent />
         <StructuredData />
         <SmoothHash />
       </body>

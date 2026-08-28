@@ -1,6 +1,5 @@
 import Link from "next/link";
 import BrandMark from "./BrandMark";
-import CookiePreferenceButton from "./CookiePreferenceButton";
 import { SITE } from "@/lib/site";
 
 export default function Footer() {
@@ -36,7 +35,6 @@ export default function Footer() {
             <FooterLink href="/terminos">Términos y condiciones</FooterLink>
             <FooterLink href="/privacidad">Política de privacidad</FooterLink>
             <FooterLink href="/cookies">Política de cookies</FooterLink>
-            <CookiePreferenceButton />
           </div>
         </div>
 

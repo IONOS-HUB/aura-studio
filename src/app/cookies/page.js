@@ -7,16 +7,6 @@ export const metadata = {
 
 const COOKIES = [
   {
-    name: "aura-cookie-consent",
-    purpose: "Guarda tu preferencia de cookies",
-    duration: "12 meses",
-  },
-  {
-    name: "_ga / _ga_*",
-    purpose: "Analítica (Google Analytics) — solo si aceptas",
-    duration: "hasta 24 meses",
-  },
-  {
     name: "Cookies de Google Calendar",
     purpose: "Funcionamiento del calendario de citas embebido",
     duration: "las define Google",
@@ -28,10 +18,9 @@ export default function CookiesPage() {
     <LegalPage title="Política de cookies" updated={SITE.legalUpdated}>
       <section>
         <p>
-          Usamos cookies necesarias para el funcionamiento del sitio y,
-          solo con tu permiso, cookies de analítica. El calendario de citas
-          (Google) puede establecer las suyas al cargar. Puedes cambiar tu
-          preferencia de analítica cuando quieras desde el pie de página.
+          No usamos cookies propias de analítica ni de marketing. El
+          calendario de citas (Google), que usamos para agendar tu cita,
+          puede establecer sus propias cookies al cargar.
         </p>
       </section>
       <section>
