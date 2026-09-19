@@ -18,21 +18,36 @@ const CATEGORIES = [
   "Masajes",
 ];
 
+const PAGE_SIZE = 8;
+
 export default function Galeria() {
   const [filter, setFilter] = useState("Todos");
+  const [shown, setShown] = useState(PAGE_SIZE);
   const listRef = useRef(null);
+  const revealedCount = useRef(0);
 
-  const visible = useMemo(
+  const filtered = useMemo(
     () => GALLERY_ITEMS.filter((item) => filter === "Todos" || item.category === filter),
     [filter]
   );
+  const visible = filtered.slice(0, shown);
+  const hasMore = shown < filtered.length;
+
+  function selectFilter(cat) {
+    revealedCount.current = 0;
+    setShown(PAGE_SIZE);
+    setFilter(cat);
+  }
 
   useEffect(() => {
-    const items = listRef.current?.querySelectorAll("li");
-    if (!items?.length) return;
+    const items = [...(listRef.current?.querySelectorAll("li") ?? [])];
+    if (!items.length) return;
+    const fresh = items.slice(revealedCount.current);
+    revealedCount.current = items.length;
+    if (!fresh.length) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     gsap.fromTo(
-      items,
+      fresh,
       { clipPath: "inset(0 0 100% 0)" },
       {
         clipPath: "inset(0 0 0% 0)",
@@ -41,7 +56,7 @@ export default function Galeria() {
         ease: "power2.out",
       }
     );
-  }, [visible]);
+  }, [filter, shown]);
 
   return (
     <section id="galeria" className="border-t border-nude-200">
@@ -61,8 +76,8 @@ export default function Galeria() {
           El trabajo que realza tu belleza.
         </Reveal>
         <p className="mb-10 measure text-ink-600 lg:mb-14">
-          Estamos preparando la galería de trabajos reales. Mientras tanto,
-          el sello ocupa el lugar de cada foto.
+          Trabajos reales del estudio en Ibarra. Pestañas, depilación y masajes
+          se irán sumando a medida que lleguen las fotos.
         </p>
 
         <Reveal
@@ -76,7 +91,7 @@ export default function Galeria() {
             <button
               key={cat}
               type="button"
-              onClick={() => setFilter(cat)}
+              onClick={() => selectFilter(cat)}
               aria-pressed={filter === cat}
               className={`eyebrow-label rounded-full px-3.5 py-1.5 transition-colors ${
                 filter === cat
@@ -110,21 +125,7 @@ export default function Galeria() {
                   }`}
                 >
                   {item.type === "video" ? (
-                    <video
-                      // muted por propiedad: React no siempre refleja el atributo
-                      // y sin él los navegadores bloquean el autoplay.
-                      ref={(el) => {
-                        if (el) el.muted = true;
-                      }}
-                      src={item.src}
-                      aria-label={item.ariaLabel}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="metadata"
-                      className="absolute inset-0 h-full w-full object-cover"
-                    />
+                    <GalleryVideo src={item.src} ariaLabel={item.ariaLabel} />
                   ) : (
                     <Image
                       src={item.src}
@@ -139,7 +140,56 @@ export default function Galeria() {
             </li>
           ))}
         </ul>
+
+        {hasMore ? (
+          <div className="mt-10 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShown((n) => n + PAGE_SIZE)}
+              className="eyebrow-label rounded-[var(--radius-aura)] border border-nude-200 bg-nude-000 px-7 py-4 text-ink-900 transition-colors hover:border-gold-700 hover:text-gold-700"
+            >
+              Ver más
+            </button>
+          </div>
+        ) : null}
       </div>
     </section>
+  );
+}
+
+function GalleryVideo({ src, ariaLabel }) {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    el.muted = true;
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.play().catch(() => {});
+        } else {
+          el.pause();
+        }
+      },
+      { threshold: 0.35 }
+    );
+
+    io.observe(el);
+    return () => io.disconnect();
+  }, [src]);
+
+  return (
+    <video
+      ref={ref}
+      src={src}
+      aria-label={ariaLabel}
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      className="absolute inset-0 h-full w-full object-cover"
+    />
   );
 }

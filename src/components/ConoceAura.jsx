@@ -1,6 +1,6 @@
 import Reveal from "./Reveal";
-import PlaceholderMedia from "./PlaceholderMedia";
 import Seal from "./Seal";
+import ConoceCarousel from "./ConoceCarousel";
 
 export default function ConoceAura() {
   return (
@@ -8,12 +8,8 @@ export default function ConoceAura() {
       id="conoce-aura"
       className="grid gap-0 border-t border-nude-200 lg:grid-cols-12"
     >
-      <div className="relative order-2 lg:order-1 lg:col-span-5">
-        <PlaceholderMedia
-          label="María en el estudio"
-          variant="studio"
-          className="aspect-[4/5] w-full lg:h-full"
-        />
+      <div className="relative order-2 lg:order-1 lg:col-span-5 lg:min-h-[42rem]">
+        <ConoceCarousel />
       </div>
 
       <div className="order-1 flex flex-col justify-center gap-8 px-6 py-20 sm:py-24 lg:order-2 lg:col-span-6 lg:col-start-7 lg:py-0">

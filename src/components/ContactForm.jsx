@@ -1,15 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
-const SERVICES = [
-  "Uñas",
-  "Pestañas",
-  "Cejas",
-  "Maquillaje",
-  "Depilación",
-  "Masajes corporales",
-];
+import { CONTACT_SERVICES } from "@/lib/servicios";
 
 const initialState = {
   nombre: "",
@@ -111,7 +103,7 @@ export default function ContactForm() {
           className="w-full rounded-[var(--radius-aura)] border border-nude-200 bg-white px-4 py-3 text-ink-900 outline-none focus-visible:border-gold-700"
         >
           <option value="">Selecciona un servicio</option>
-          {SERVICES.map((s) => (
+          {CONTACT_SERVICES.map((s) => (
             <option key={s} value={s}>
               {s}
             </option>
