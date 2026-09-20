@@ -33,10 +33,16 @@ export default function HorarioUbicacion() {
               </div>
             ))}
           </dl>
-          <p className="text-sm text-ink-600">
-            La última cita se agenda según la duración del servicio, dentro
-            de este horario.
-          </p>
+          <div className="flex flex-col gap-3 text-sm text-ink-600">
+            <p>
+              La última cita se agenda según la duración del servicio, dentro
+              de este horario.
+            </p>
+            <p>
+              Trabajamos con horarios personalizados, fuera de nuestro horario
+              habitual por un valor extra.
+            </p>
+          </div>
 
           <address className="not-italic text-lg text-ink-600">
             {SITE.streetAddress}

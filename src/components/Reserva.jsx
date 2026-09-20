@@ -45,6 +45,10 @@ export default function Reserva({ eager = false }) {
               Si prefieres hablar antes de elegir hora, escríbenos. La
               reserva en el calendario confirma el cupo al momento.
             </p>
+            <p className="text-sm text-ink-600">
+              Trabajamos con horarios personalizados, fuera de nuestro horario
+              habitual por un valor extra.
+            </p>
             <a
               href={`https://wa.me/${SITE.whatsapp}`}
               target="_blank"
