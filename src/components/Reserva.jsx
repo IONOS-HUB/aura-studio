@@ -1,6 +1,7 @@
 import Reveal from "./Reveal";
 import Seal from "./Seal";
 import Link from "next/link";
+import ReservaCalendar from "./ReservaCalendar";
 import { SITE } from "@/lib/site";
 
 export default function Reserva({ eager = false }) {
@@ -30,14 +31,7 @@ export default function Reserva({ eager = false }) {
         </p>
 
         <div className="grid gap-12 lg:grid-cols-12">
-          <div className="overflow-hidden rounded-[var(--radius-aura)] border border-nude-200 bg-white lg:col-span-8">
-            <iframe
-              title={`Reservar cita en ${SITE.name}`}
-              src={SITE.appointmentsEmbed}
-              loading={eager ? "eager" : "lazy"}
-              className="block h-[720px] w-full border-0 sm:h-[800px]"
-            />
-          </div>
+          <ReservaCalendar eager={eager} />
 
           <div className="flex flex-col gap-6 border-t border-nude-200 pt-10 lg:col-span-4 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
             <p className="eyebrow-label text-ink-600">También puedes</p>
@@ -66,7 +60,14 @@ export default function Reserva({ eager = false }) {
               Abrir el calendario en una pestaña
             </a>
             <p className="text-xs text-ink-600">
-              Al reservar aceptas el tratamiento de tus datos según la{" "}
+              Al reservar aceptas las{" "}
+              <Link
+                href="/politicas-servicio"
+                className="text-gold-700 underline underline-offset-2"
+              >
+                Políticas y Condiciones de Servicio
+              </Link>{" "}
+              y el tratamiento de tus datos según la{" "}
               <Link
                 href="/privacidad"
                 className="text-gold-700 underline underline-offset-2"

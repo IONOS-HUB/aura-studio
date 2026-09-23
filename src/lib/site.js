@@ -22,6 +22,8 @@ export const SITE = {
   cancellationHours: 12,
   lateMinutes: 15,
   legalUpdated: "15 de agosto de 2026",
+  servicePoliciesPath:
+    "/files/POLITICAS Y CONDICIONES DE SERVICIO DE AURA BEAUTY STUDIO.pdf",
   appointmentsUrl:
     "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1YbyHPHTfAYoE5V7SufcsYokFDk82SEE4oGwBviz7RUPp5M8UjBrJo6rFotU8zrJHK_huOYhKS",
   appointmentsEmbed:

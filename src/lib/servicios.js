@@ -123,6 +123,24 @@ export const SERVICE_MENUS = [
       { name: "Con aceite", price: 17, prefix: "desde" },
     ],
   },
+  {
+    n: "11",
+    name: "Peinados",
+    tagline: "Planchado, ondas y recogidos para cada ocasión.",
+    approximate: true,
+    items: [
+      { name: "Planchado básico", price: 10, prefix: "desde" },
+      { name: "Ondas sencillas", price: 15, prefix: "desde" },
+      { name: "Ondas marcadas / glam", price: 18, prefix: "desde" },
+      { name: "Peinado infantil sencillo", price: 12, prefix: "desde" },
+      { name: "Trenzas", price: 15, prefix: "desde" },
+      { name: "Semirecogido sencillo", price: 15, prefix: "desde" },
+      { name: "Semirecogido elaborado", price: 25, prefix: "desde" },
+      { name: "Peinado para graduación", price: 25, prefix: "desde" },
+      { name: "Peinado para candidata", price: 30, prefix: "desde" },
+      { name: "Trenzas con kanecalón", price: 25, prefix: "desde" },
+    ],
+  },
 ];
 
 export const CONTACT_SERVICES = SERVICE_MENUS.map((s) => s.name);

@@ -4,6 +4,7 @@ import SiteHeader from "./SiteHeader";
 
 const LEGAL_LINKS = [
   { href: "/terminos", label: "Términos" },
+  { href: "/politicas-servicio", label: "Políticas de servicio" },
   { href: "/privacidad", label: "Privacidad" },
   { href: "/cookies", label: "Cookies" },
 ];

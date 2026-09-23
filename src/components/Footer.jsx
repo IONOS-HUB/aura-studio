@@ -33,6 +33,9 @@ export default function Footer() {
           <div className="flex flex-col gap-3">
             <p className="eyebrow-label text-ink-600">Legal</p>
             <FooterLink href="/terminos">Términos y condiciones</FooterLink>
+            <FooterLink href="/politicas-servicio">
+              Políticas de servicio
+            </FooterLink>
             <FooterLink href="/privacidad">Política de privacidad</FooterLink>
             <FooterLink href="/cookies">Política de cookies</FooterLink>
           </div>

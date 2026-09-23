@@ -2,7 +2,14 @@ import { getSiteUrl } from "@/lib/site";
 
 export default function sitemap() {
   const base = getSiteUrl();
-  const routes = ["", "/reservar", "/terminos", "/privacidad", "/cookies"];
+  const routes = [
+    "",
+    "/reservar",
+    "/terminos",
+    "/politicas-servicio",
+    "/privacidad",
+    "/cookies",
+  ];
 
   return routes.map((route) => ({
     url: `${base}${route}`,
