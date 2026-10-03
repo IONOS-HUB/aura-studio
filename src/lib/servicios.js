@@ -73,6 +73,25 @@ export const SERVICE_MENUS = [
       { name: "Lifting + henna", price: 24 },
       { name: "Retiro de extensiones", price: 5 },
       { name: "Retoques", price: 18, prefix: "desde" },
+      { name: "Clásicas", price: 25, group: "Pelo a pelo" },
+      { name: "Híbridas", price: 30, group: "Pelo a pelo" },
+      { name: "Volumen 3D", price: 32, group: "Pelo a pelo" },
+      { name: "Volumen ruso", price: 38, group: "Pelo a pelo" },
+      { name: "Mega volumen", price: 45, group: "Pelo a pelo" },
+      { name: "Efecto wispy", price: 32, group: "Pelo a pelo" },
+      { name: "Efecto anime", price: 33, group: "Pelo a pelo" },
+      { name: "Efecto ojo de gato", price: 30, group: "Pelo a pelo" },
+      { name: "Efecto foxy", price: 32, group: "Pelo a pelo" },
+      { name: "Efecto hawaiano", price: 35, group: "Pelo a pelo" },
+      { name: "Efecto ardilla", price: 32, group: "Pelo a pelo" },
+      { name: "Efecto rímel", price: 30, group: "Pelo a pelo" },
+      {
+        name: "Efecto volumen griego",
+        price: 35,
+        priceTo: 38,
+        prefix: "desde",
+        group: "Pelo a pelo",
+      },
     ],
   },
   {
@@ -148,6 +167,9 @@ export const CONTACT_SERVICES = SERVICE_MENUS.map((s) => s.name);
 export function formatItemPrice(item) {
   if (item.consult) return "Consultar";
   const amount = `$${item.price}`;
+  if (item.prefix === "desde" && typeof item.priceTo === "number") {
+    return `desde ${amount} a ${item.priceTo}`;
+  }
   if (item.prefix === "desde") return `desde ${amount}`;
   if (item.suffix === "+") return `${amount}+`;
   return amount;
