@@ -25,9 +25,9 @@ export const SITE = {
   servicePoliciesPath:
     "/files/POLITICAS Y CONDICIONES DE SERVICIO DE AURA BEAUTY STUDIO.pdf",
   appointmentsUrl:
-    "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1YbyHPHTfAYoE5V7SufcsYokFDk82SEE4oGwBviz7RUPp5M8UjBrJo6rFotU8zrJHK_huOYhKS",
+    "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3U9QYh6RjK8vW_AZ4ewRRDpuRkZYwAJd5RkjG5XzZwDw5zl07V99qXCXBGYmq9g2rTHQSWcES7",
   appointmentsEmbed:
-    "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1YbyHPHTfAYoE5V7SufcsYokFDk82SEE4oGwBviz7RUPp5M8UjBrJo6rFotU8zrJHK_huOYhKS?gv=true&hl=es",
+    "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3U9QYh6RjK8vW_AZ4ewRRDpuRkZYwAJd5RkjG5XzZwDw5zl07V99qXCXBGYmq9g2rTHQSWcES7?gv=true&hl=es",
 };
 
 export const FULL_ADDRESS = `${SITE.streetAddress}, ${SITE.city}, ${SITE.region}, ${SITE.country}`;
