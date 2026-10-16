@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Reveal from "./Reveal";
 import Seal from "./Seal";
 import {
@@ -87,23 +88,40 @@ export default function Servicios() {
                     ) : null}
 
                     <ul>
-                      {s.items.map((item) => (
-                        <li
-                          key={item.name}
-                          className="flex items-baseline gap-3 border-t border-nude-200/70 py-2.5 first:border-t-0 first:pt-0"
-                        >
-                          <span className="min-w-0 text-[0.9375rem] leading-snug text-ink-900">
-                            {item.name}
-                          </span>
-                          <span
-                            aria-hidden="true"
-                            className="min-w-4 flex-1 border-b border-dotted border-nude-200"
-                          />
-                          <span className="font-tabular shrink-0 text-sm text-gold-700">
-                            {formatItemPrice(item)}
-                          </span>
-                        </li>
-                      ))}
+                      {s.items.map((item, index) => {
+                        const showGroup =
+                          item.group &&
+                          item.group !== s.items[index - 1]?.group;
+                        return (
+                          <Fragment key={item.name}>
+                            {showGroup ? (
+                              <li className="border-t border-nude-200/70 pb-1 pt-4">
+                                <span className="eyebrow-label text-gold-700">
+                                  {item.group}
+                                </span>
+                              </li>
+                            ) : null}
+                            <li
+                              className={
+                                showGroup
+                                  ? "flex items-baseline gap-3 py-2.5"
+                                  : "flex items-baseline gap-3 border-t border-nude-200/70 py-2.5 first:border-t-0 first:pt-0"
+                              }
+                            >
+                              <span className="min-w-0 text-[0.9375rem] leading-snug text-ink-900">
+                                {item.name}
+                              </span>
+                              <span
+                                aria-hidden="true"
+                                className="min-w-4 flex-1 border-b border-dotted border-nude-200"
+                              />
+                              <span className="font-tabular shrink-0 text-sm text-gold-700">
+                                {formatItemPrice(item)}
+                              </span>
+                            </li>
+                          </Fragment>
+                        );
+                      })}
                     </ul>
 
                     {s.approximate ? (
