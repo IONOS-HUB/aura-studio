@@ -41,14 +41,27 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col-reverse items-start justify-between gap-4 border-t border-nude-200 pt-8 text-xs text-ink-600 sm:flex-row sm:items-center">
-          <p>
-            © {new Date().getFullYear()} {SITE.name}. Todos los derechos
-            reservados.
-          </p>
+        <div className="mt-14 flex flex-col-reverse items-start justify-between gap-6 border-t border-nude-200 pt-8 text-xs text-ink-600 md:flex-row md:items-end">
+          <div className="flex flex-col gap-2">
+            <p>
+              © {new Date().getFullYear()} {SITE.name}. Todos los derechos reservados.
+            </p>
+            <p>
+              Diseño y desarrollo:{" "}
+              <a
+                href="https://ionoshub.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium hover:text-gold-700 transition-colors"
+              >
+                IONOS HUB
+              </a>
+            </p>
+          </div>
           <p>
             {SITE.city}, {SITE.region} · {SITE.country}
           </p>
+          
         </div>
       </div>
     </footer>
